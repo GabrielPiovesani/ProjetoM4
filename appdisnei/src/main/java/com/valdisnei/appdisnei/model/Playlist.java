@@ -65,4 +65,6 @@ public class Playlist {
     public void setMidiaAtual(String midiaAtual) {
         this.midiaAtual = midiaAtual;
     }
+
+
 }
