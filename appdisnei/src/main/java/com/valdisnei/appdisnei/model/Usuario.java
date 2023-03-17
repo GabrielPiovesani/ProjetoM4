@@ -1,6 +1,5 @@
-package com.valdisnei.appdisnei.artista;
+package com.valdisnei.appdisnei.model;
 
-import com.valdisnei.appdisnei.artista.BibliotecaM;
 import jakarta.persistence.*;
 
 @Entity
@@ -13,14 +12,11 @@ public class Usuario {
     private String email;
     private String senha;
 
-    @OneToOne
-    private BibliotecaM bibliotecaM;
 
     public Usuario() {
     }
 
-    public Usuario(int id, String nome, String email, String senha) {
-        this.id = id;
+    public Usuario( String nome, String email, String senha) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
@@ -28,10 +24,6 @@ public class Usuario {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNome() {

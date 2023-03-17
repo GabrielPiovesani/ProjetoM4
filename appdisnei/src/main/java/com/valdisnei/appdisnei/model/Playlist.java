@@ -1,7 +1,5 @@
-package com.valdisnei.appdisnei.artista;
+package com.valdisnei.appdisnei.model;
 
-import com.valdisnei.appdisnei.artista.BibliotecaM;
-import com.valdisnei.appdisnei.artista.Midia;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -13,21 +11,23 @@ public class Playlist {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToOne
-    private BibliotecaM bibliotecaM;
+
     @OneToMany
+    @JoinTable(name = "playlist_midias",
+            joinColumns = @JoinColumn(name = "playlist_id"),
+            inverseJoinColumns = @JoinColumn(name = "midias_id"))
     private ArrayList<Midia> midias;
     private int ordem;
 
-    private Midia midiaAtual;
+
+    private String midiaAtual;
 
 
     // Constructor
     public Playlist() {
     }
 
-    public Playlist(int id, ArrayList<Midia> midias, int ordem, Midia midiaAtual) {
-        this.id = id;
+    public Playlist( ArrayList<Midia> midias, int ordem, String midiaAtual) {
         this.midias = midias;
         this.ordem = ordem;
         this.midiaAtual = midiaAtual;
@@ -40,10 +40,6 @@ public class Playlist {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public ArrayList<Midia> getMidias() {
@@ -62,11 +58,11 @@ public class Playlist {
         this.ordem = ordem;
     }
 
-    public Midia getMidiaAtual() {
+    public String getMidiaAtual() {
         return midiaAtual;
     }
 
-    public void setMidiaAtual(Midia midiaAtual) {
+    public void setMidiaAtual(String midiaAtual) {
         this.midiaAtual = midiaAtual;
     }
 }

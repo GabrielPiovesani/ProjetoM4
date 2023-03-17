@@ -1,7 +1,5 @@
-package com.valdisnei.appdisnei.artista;
+package com.valdisnei.appdisnei.model;
 
-import com.valdisnei.appdisnei.artista.Artista;
-import com.valdisnei.appdisnei.artista.Midia;
 import jakarta.persistence.*;
 
 @Entity
@@ -13,6 +11,7 @@ public class Musica extends Midia {
     private double duracao;
 
     @OneToOne
+    @JoinColumn(name = "artista_id")
     private Artista artista;
     int nota;
 
@@ -23,23 +22,16 @@ public class Musica extends Midia {
     public Musica() {
     }
 
-    public Musica(int id, String titulo, String genero, int ano, int id1, double duracao, Artista artista, int nota) {
-        super(id, titulo, genero, ano);
-        this.id = id1;
+    public Musica(String titulo, String genero, int ano, double duracao, Artista artista) {
+        super(titulo, genero, ano);
         this.duracao = duracao;
         this.artista = artista;
-        this.nota = nota;
     }
 
     // get set
     @Override
     public int getId() {
         return id;
-    }
-
-    @Override
-    public void setId(int id) {
-        this.id = id;
     }
 
     public double getDuracao() {

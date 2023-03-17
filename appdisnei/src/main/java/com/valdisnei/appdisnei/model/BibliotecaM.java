@@ -1,8 +1,7 @@
-package com.valdisnei.appdisnei.artista;
+package com.valdisnei.appdisnei.model;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -12,13 +11,16 @@ public class BibliotecaM {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToOne
-    private Midia midia;
+    @OneToMany
+    private List<Midia> midia;
 
     @OneToOne
     private Usuario usuario;
 
     @OneToMany
+    @JoinTable(name = "biblioteca_playlist",
+            joinColumns = @JoinColumn(name = "biblioteca_id"),
+            inverseJoinColumns = @JoinColumn(name = "playlist_id"))
     private List<Playlist> playlist;
 
 
@@ -28,8 +30,7 @@ public class BibliotecaM {
     public BibliotecaM() {
     }
 
-    public BibliotecaM(int id, Midia midia, Usuario usuario, List<Playlist> playlist) {
-        this.id = id;
+    public BibliotecaM( List<Midia> midia, Usuario usuario, List<Playlist> playlist) {
         this.midia = midia;
         this.usuario = usuario;
         this.playlist = playlist;
@@ -39,15 +40,11 @@ public class BibliotecaM {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Midia getMidia() {
+    public List<Midia> getMidia() {
         return midia;
     }
 
-    public void setMidia(Midia midia) {
+    public void setMidia(List<Midia> midia) {
         this.midia = midia;
     }
 

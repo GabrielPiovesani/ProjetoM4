@@ -1,4 +1,4 @@
-package com.valdisnei.appdisnei.artista;
+package com.valdisnei.appdisnei.model;
 
 import jakarta.persistence.*;
 
@@ -11,17 +11,13 @@ public class Ator extends Artista {
 
     private String formacao;
 
-    @ManyToOne
-    private Filme filme;
-
     // Constructor
 
 
     public Ator() {
     }
 
-    public Ator(int id, String formacao) {
-        this.id = id;
+    public Ator( String formacao) {
         this.formacao = formacao;
     }
 
@@ -30,10 +26,6 @@ public class Ator extends Artista {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getFormacao() {

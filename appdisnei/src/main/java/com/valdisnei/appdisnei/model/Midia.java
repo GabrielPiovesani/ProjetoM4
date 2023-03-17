@@ -1,4 +1,4 @@
-package com.valdisnei.appdisnei.artista;
+package com.valdisnei.appdisnei.model;
 
 import jakarta.persistence.*;
 
@@ -11,16 +11,10 @@ public class Midia {
     private String titulo, genero;
     private int ano;
 
-    @OneToOne
-    private BibliotecaM bibliotecaM;
-    @ManyToOne
-    private Playlist playlist;
-
     public Midia() {
     }
 
-    public Midia(int id, String titulo, String genero, int ano) {
-        this.setId(id);
+    public Midia( String titulo, String genero, int ano) {
         this.setTitulo(titulo);
         this.setGenero(genero);
         this.setAno(ano);
@@ -30,9 +24,6 @@ public class Midia {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getTitulo() {
         return titulo;

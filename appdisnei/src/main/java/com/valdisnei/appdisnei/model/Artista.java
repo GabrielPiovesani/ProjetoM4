@@ -1,4 +1,4 @@
-package com.valdisnei.appdisnei.artista;
+package com.valdisnei.appdisnei.model;
 
 import jakarta.persistence.*;
 
@@ -15,11 +15,7 @@ public class Artista {
     private String premiacoes;
     private String genero;
 
-    @OneToOne
-    private Musica musica;
 
-    @OneToOne
-    private Filme filme;
 
 
 
@@ -28,8 +24,7 @@ public class Artista {
     public Artista() {
     }
 
-    public Artista(int id, String nome, LocalDate dataDeNascimento, String premiacoes, String genero) {
-        this.id = id;
+    public Artista( String nome, LocalDate dataDeNascimento, String premiacoes, String genero) {
         this.nome = nome;
         this.dataDeNascimento = dataDeNascimento;
         this.premiacoes = premiacoes;
@@ -44,9 +39,6 @@ public class Artista {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getNome() {
         return nome;

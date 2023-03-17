@@ -1,6 +1,5 @@
-package com.valdisnei.appdisnei.artista;
+package com.valdisnei.appdisnei.model;
 
-import com.valdisnei.appdisnei.artista.Artista;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,8 +19,7 @@ public class Musico extends Artista {
     public Musico() {
     }
 
-    public Musico(int id, String atuacao) {
-        this.id = id;
+    public Musico(String atuacao) {
         this.atuacao = atuacao;
     }
 
@@ -30,10 +28,6 @@ public class Musico extends Artista {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getAtuacao() {

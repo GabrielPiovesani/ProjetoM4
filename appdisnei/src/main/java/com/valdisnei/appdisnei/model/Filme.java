@@ -1,4 +1,4 @@
-package com.valdisnei.appdisnei.artista;
+package com.valdisnei.appdisnei.model;
 
 import jakarta.persistence.*;
 
@@ -14,6 +14,9 @@ public class Filme extends Midia {
     private String tipo;
 
     @OneToMany
+    @JoinTable(name = "elenco_ator",
+            joinColumns = @JoinColumn(name = "filme_id"),
+            inverseJoinColumns = @JoinColumn(name = "ator_id"))
     private ArrayList<Ator> elenco;
     private String diretor;
     private String produtor;
@@ -25,10 +28,9 @@ public class Filme extends Midia {
     public Filme() {
     }
 
-    public Filme(int id, String titulo, String genero, int ano, int id1, double duracao,
+    public Filme( String titulo, String genero, int ano, double duracao,
                  String tipo, ArrayList<Ator> elenco, String diretor, String produtor) {
-        super(id, titulo, genero, ano);
-        this.id = id1;
+        super(titulo, genero, ano);
         this.duracao = duracao;
         this.setTipo(duracao);
         this.elenco = elenco;
@@ -44,10 +46,6 @@ public class Filme extends Midia {
         return id;
     }
 
-    @Override
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public double getDuracao() {
         return duracao;
@@ -62,7 +60,7 @@ public class Filme extends Midia {
     }
 
     public void setTipo(double duracao) {
-        if (duracao < 0.30){
+        if (duracao < 30.00){
             this.tipo = "Curta";
         } else {
             this.tipo = "Longa";
