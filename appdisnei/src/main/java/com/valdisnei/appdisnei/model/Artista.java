@@ -11,7 +11,7 @@ public class Artista {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nome;
-    private LocalDate dataDeNascimento;
+    private String dataDeNascimento;
     private String premiacoes;
     private String genero;
 
@@ -24,7 +24,7 @@ public class Artista {
     public Artista() {
     }
 
-    public Artista( String nome, LocalDate dataDeNascimento, String premiacoes, String genero) {
+    public Artista( String nome, String dataDeNascimento, String premiacoes, String genero) {
         this.nome = nome;
         this.dataDeNascimento = dataDeNascimento;
         this.premiacoes = premiacoes;
@@ -48,11 +48,11 @@ public class Artista {
         this.nome = nome;
     }
 
-    public LocalDate getDataDeNascimento() {
+    public String getDataDeNascimento() {
         return dataDeNascimento;
     }
 
-    public void setDataDeNascimento(LocalDate dataDeNascimento) {
+    public void setDataDeNascimento(String dataDeNascimento) {
         this.dataDeNascimento = dataDeNascimento;
     }
 
