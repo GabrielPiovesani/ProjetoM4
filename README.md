@@ -6,7 +6,7 @@
 Uma empresa de mídia deseja implementar um serviço denominado Valdisnei, que disponibiliza seu catálogo de mídias, cujo o qual contém músicas, filmes, séries e demais mídias.
 
 ### 🧩 Requisitos:
-° O backenddeve ser desenvolvido usando Spring Boot Web
+° O backend deve ser desenvolvido usando Spring Boot Web;
 <br>
 ° O frontend deve ser desenvolvido usando React.
 
