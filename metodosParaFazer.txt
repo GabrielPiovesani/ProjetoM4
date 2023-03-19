@@ -1,0 +1,27 @@
+METODOS  NECESSARIOS 
+ 
+PLAYLIST -------------------------------------
+- TOCAR PLAYLIST 
+- PROXIMA MIDIA
+- MIDIA ANTERIOR
+- MISTURAR MIDIAS
+
+---------------------------------------------------------------------------------------
+O USUARIO DEVE
+CRIAR PLAYLIST
+ALTERAR PLAYLIST
+REMOVER PLAYLIST 
+TOMAR UMA PLAYLIST PUBLICA 
+CONSULTAR AS MIDIAS PRESENTES NA BIBLIOTECA
+POR ARTISTA / GENERO / ANO 
+
+---------------------------------------------------------------------------------------
+
+SERVIÇO DE LOGIN
+
+METODO DE ACESSO 
+TROCAR SENHA
+
+METODOS QUE PODEMOS FAZER 
+
+

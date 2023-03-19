@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+  color: aliceblue;
+  
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+
+}
+body{
+  background-color: #050E25 !important;
+}
+
+h1, h2, h3, h4, h5, h6, a , span{
+  color: #f8f8f8;
+}
