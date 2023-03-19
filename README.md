@@ -1,4 +1,4 @@
-<h1>Projeto em Squad Módulo 4  - Streaming Digital</h1>
+<h1>Projeto em Grupo Módulo 4  - Streaming Digital</h1>
 
 > Status: Em desenvolvimento ⚠️
 
