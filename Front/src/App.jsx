@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Catalogo from './pages/Catalogo/Catalogo.jsx';
 import Home from './pages/Home/Home.jsx';
 import Inicio from './pages/Inicio/Inicio.jsx'
+import Cadastro from './pages/Cadastro/Cadastro.jsx'
 
 
 
@@ -15,8 +16,8 @@ function App() {
       <Route path='/' element={<Inicio/>} />
       <Route path="/home" element={<Home />} />
       <Route path="/catalogo" element={<Catalogo/>}/>
-      <Route />
-      <Route />
+      <Route path=""/>
+      <Route path="/cadastro" element={<Cadastro/>} />
       </Routes>
         </Router> 
     </div>
