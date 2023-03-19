@@ -1,19 +1,28 @@
 
 import React from 'react'
 import './App.css'
-import Navbar from './Pages/Home/Navbar.jsx'
-import Carrosel from './Pages/Home/Carrosel.jsx'
-import Footer from './Pages/Home/Footer.jsx'
+import Home from './Pages/Home/Home.jsx'
+import Cadastro from './Pages/Cadastro/Cadastro.jsx'
+import Form from './Pages/Cadastro/Cadastro.jsx'
 
+import Footer from './Componentes/Footer/Footer.jsx'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   
 
   return (
     <div className="App">
-     <Navbar></Navbar>
-     <Carrosel></Carrosel>
+    <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cadastro" element={<Cadastro />} />
+          
+        </Routes>
+      </Router>
      <Footer/>
+     <Form></Form>
+     <Cadastro></Cadastro>
       
     </div>
   )
