@@ -19,7 +19,4 @@ Uma empresa de mídia deseja implementar um serviço denominado Valdisnei, que d
 ### 🎯 Membros do Squad:
 
 | [<img src="https://avatars.githubusercontent.com/u/120539140?v=4" width=115><br><sub>Leonardo Santos</sub>](https://github.com/lLeoSantos) | [<img src="https://avatars.githubusercontent.com/u/122322358?v=4" width=115><br><sub>Guilherme Lima</sub>](https://github.com/Eloisasilva98) | [ <img src="https://avatars.githubusercontent.com/u/116887504?v=4" width=115><br><sub>Alex Felipe</sub>](https://github.com/GabrielPiovesani) | [ <img src="https://avatars.githubusercontent.com/u/121135013?v=4" width=115><br><sub>Alex Felipe</sub>](https://github.com/MaryJackS) |
-
-
-| [ <img src="https://avatars.githubusercontent.com/u/121135013?v=4" width=115><br><sub>Alex Felipe</sub>](https://github.com/MaryJackS) |
 | :---: | :---: | :---: | :---: |
