@@ -2,7 +2,6 @@
 
 :root{
   color: aliceblue;
-  
 }
 
 *{
@@ -10,12 +9,25 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  
 
 }
 body{
-  background-color: #050E25 !important;
+  background-color: #04153d !important;
+
 }
+
+
 
 h1, h2, h3, h4, h5, h6, a , span{
   color: #f8f8f8;
 }
+
+.Login-background {
+  background-image: url(../src/assets/img/fundoImg.png) !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+

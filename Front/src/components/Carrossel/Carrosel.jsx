@@ -27,7 +27,7 @@ function CarroselPage() {
         <img className="d-block w-100" src={Img3} alt="Third slide"/>
       </Carousel.Item>
       </Carousel>
-      </div>
+     
   );
 }
 
