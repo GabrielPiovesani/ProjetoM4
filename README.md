@@ -3,7 +3,8 @@
 > Status: Em desenvolvimento ⚠️
 
 ### 📑 Contexto do projeto:
-Uma empresa de mídia deseja implementar um serviço denominado Valdisnei, que disponibiliza seu catálogo de mídias, cujo o qual contém músicas, filmes, séries e demais mídias.
+<p>Uma empresa de mídia deseja implementar um serviço denominado Valdisnei, que disponibiliza seu catálogo de mídias, o qual contém músicas, filmes, séries e demais mídias.</p>
+<p>Portanto, fomos contratos para desenvolver uma Aplicação Web que implementa tais serviços.</p>
 
 ### 🧩 Requisitos:
 ° O backend deve ser desenvolvido usando Spring Boot Web;
