@@ -9,9 +9,10 @@ function Header() {
         <Container width="100%">
           <Navbar.Brand to="/home">ValDisnei</Navbar.Brand>
           <Nav className="me-auto">
-              <Nav.Link to="/home">Home</Nav.Link>
-              <Nav.Link to="/home">Catalogo</Nav.Link>
+              <Nav.Link href='/home'>Home</Nav.Link>
+              <Nav.Link href="/catalogo">Catalogo</Nav.Link>
             <Nav.Link href="#features">Minhas Playlists</Nav.Link>
+            <Nav.Link href='/cadastro'>Cadastro</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
