@@ -14,7 +14,7 @@ function CarroselPage() {
   };
 
   return (
-
+    <div>
     <Carousel className='mt-3' activeIndex={index} onSelect={handleSelect}>
 
       <Carousel.Item>

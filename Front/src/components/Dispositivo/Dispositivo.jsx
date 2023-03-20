@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Container } from "react-bootstrap";
 import computador from "../../assets/img/notbook.png";
 import celular from "../../assets/img/celulartable.png";
 import tablet from "../../assets/img/videogame.png";
@@ -7,7 +7,8 @@ import tv from "../../assets/img/tv.png";
 
 function Dispositivo() {
   return (
-    <div className="m-4">
+    <Container>
+    <div className="m-5">
       <h2 className="text-center mb-4">Assista em seus dispositivos favoritos</h2>
       <div className="d-flex justify-content-center m-4 ">
         <div className="row">
@@ -29,7 +30,8 @@ function Dispositivo() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+      </Container>
   );
 }
 

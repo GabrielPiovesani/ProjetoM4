@@ -1,11 +1,11 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Container } from "react-bootstrap";
+
 
 function Tabela() {
     return (
-      
-        <div className="d-flex justify-content-center m-4">
-        
+        <Container>
+        <div className="d-flex justify-content-center">
         <div className="col-md-3">
           <Card style={{ width: "18rem" }}>
             <Card.Body className="text-center my-4">
@@ -26,7 +26,7 @@ function Tabela() {
               <Card.Text>
                 Este é o plano intermediário, com mais recursos, perfeito para empresas em crescimento.
               </Card.Text>
-              <Button variant="primary">Assinar</Button>
+              <Button variant="primary" >Assinar</Button>
             </Card.Body>
           </Card>
         </div>
@@ -42,7 +42,9 @@ function Tabela() {
             </Card.Body>
           </Card>
         </div>
-      </div>
+        </div>
+        
+        </Container>
   
   );
 }
