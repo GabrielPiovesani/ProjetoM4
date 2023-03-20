@@ -12,17 +12,8 @@ const Login =()=> {
         <div className="Login-background">
          <LoginMenu></LoginMenu>
          <Form></Form>
+         <Footer></Footer>
         </div>
-
-          
-
- 
-        // <>
-        // <LoginMenu></LoginMenu>
-        // <Form></Form>
-        // <Footer></Footer>
-        // </>
-
     );
 
 

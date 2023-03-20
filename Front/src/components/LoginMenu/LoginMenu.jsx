@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 import style from '../../pages/Login/Login.css'
 
 
@@ -8,7 +8,7 @@ const Login =()=>{
             <div className= {style.MenuLogin}>
             <nav class="navbar navbar-dark bg-dark">
             <div class="navbar-brand" href="#">
-            <img src="./src/assets/img/logoPages.png" width="100" height="40" class="d-inline-block align-top" alt=""></img>
+            <img src="./src/assets/img/logoPages.png" width="89" height="40" class="d-inline-block align-top" alt=""></img>
             </div>
           </nav>
         </div>

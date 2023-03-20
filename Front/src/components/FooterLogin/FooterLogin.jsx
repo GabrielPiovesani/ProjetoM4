@@ -1,8 +1,7 @@
-import React from "react";
-import style from '../../pages/Login/Login.css';
+import React from 'react';
 
 const Footer = () => (
-    <div className = {style.FooterLogin}>
+    <div className = "FooterLogin">
         <p>2023-ValDisnei | Todos os direitos reservados</p>
     </div>
 );
