@@ -8,15 +8,19 @@ import Tabela from '../../components/TabelaDePrecos/Tabela'
 import Dispositivo from '../../components/Dispositivo/Dispositivo';
 
 
+
 export default function Home() {
     return (
         <>
            
            <BotaoEntrada/>
+           <Container>
             <Inicial />
-            <CarroselPage/>
+            <CarroselPage />
+            </Container>
             <Dispositivo/>
-            <Tabela/>
+            <Tabela />
+           
             
 
              

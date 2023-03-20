@@ -14,10 +14,9 @@ function App() {
       <Router>
       <Routes>
       <Route path='/' element={<Inicio/>} />
-      <Route path="/home" element={<Home />} />
-      <Route path="/catalogo" element={<Catalogo/>}/>
-      <Route path="/login" element={<Login/>}/>
-      <Route />
+      <Route path="/home" element={<Catalogo />} />
+      <Route path=""/>
+      <Route path="/cadastro" element={<Cadastro/>} />
       </Routes>
         </Router> 
     </div>
