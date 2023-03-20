@@ -1,19 +1,27 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import CarroselPage from '../../components/Carrossel/Carrosel';
-import Header from '../../components/Header/Header';
 import Inicial from '../../components/PIncial/Inicial';
-import Assinatura from '../../components/Assinatura/Assinatura'
+
+import BotaoEntrada from '../../components/BotaoDeEntrada/BotaodeEntrada';
+import Tabela from '../../components/TabelaDePrecos/Tabela'
+import Dispositivo from '../../components/Dispositivo/Dispositivo';
+
 
 export default function Home() {
     return (
         <>
-            <Container className="d-flex flex-column ">
+           
+           <BotaoEntrada/>
             <Inicial />
-                <CarroselPage></CarroselPage>
-                <Assinatura></Assinatura>
+            <CarroselPage/>
+            <Dispositivo/>
+            <Tabela/>
+            
 
-            </Container>
+             
+
+            
         </>
     )
 

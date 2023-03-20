@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6, a , span{
 }
 
 .Login-background {
-  background-image: url(../src/assets/img/imgFundo2.png);
+  background-image: url(../src/assets/img/fundoImg.png) !important;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

@@ -2,6 +2,7 @@
 form{
     display: flex;
     flex-direction: column; 
+    border-radius: 10px;
     align-items: center;
     margin-top: 0px;
     width: 380px;
@@ -56,13 +57,18 @@ form h2{
     background-color: black;
     height: 30px;
     justify-content: center;
-    margin-top: 32px;
+    margin-top: 70px;
     
 }
 p{
     color: rgb(163, 165, 168);
 }
-
+nav img{
+    margin-left: 9px;
+}
+form p{
+    margin-top: 30px;
+}
 
 
 
