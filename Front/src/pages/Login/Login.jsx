@@ -1,19 +1,23 @@
-
 import React from 'react';
 import LoginMenu from '../../components/LoginMenu/LoginMenu.jsx';
 import Form from '../../components/Form/Form.jsx';
-import Footer from '../../components/FooterLogin/FooterLogin.jsx';
+import CarroselPage from '../../components/Carrossel/Carrosel.jsx';
+import Catalogo from '../Catalogo/Catalogo.jsx';
+
+
+
 
 
 
 const Login =()=> {
     return (
-
+      
         <div className="Login-background">
-         <LoginMenu></LoginMenu>
-         <Form></Form>
-         <Footer></Footer>
+         <LoginMenu/>
+         <Form/>
+        
         </div>
+            
     );
 
 

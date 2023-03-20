@@ -1,11 +1,11 @@
 import React from 'react';
-import style from '../../pages/Login/Login.css'
+import './Login.module.css'
 
 
-const Login =()=>{
+const LoginMenu=()=>{
     return(
         //Menubar da pagina//
-            <div className= {style.MenuLogin}>
+            <div className ="MenuLogin">
             <nav class="navbar navbar-dark bg-dark">
             <div class="navbar-brand" href="#">
             <img src="./src/assets/img/logoOfice.png" width="89" height="40" class="d-inline-block align-top" alt=""></img>
@@ -16,7 +16,7 @@ const Login =()=>{
  
 }
 
-export default Login;
+export default LoginMenu;
 
 
  
