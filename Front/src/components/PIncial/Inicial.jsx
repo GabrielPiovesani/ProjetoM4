@@ -1,17 +1,23 @@
-import React from 'react'
-import { Container } from 'react-bootstrap'
-import  './Inicial.module.css'
+import React from 'react';
+import { Container, Nav, Navbar, Row, Col, Image } from 'react-bootstrap';
+import './Pinicial.module.css';
+import background from '../../assets/img/background.jpg';
+import Header from '../Header/Header';
+import IMG1 from '../../assets/img/inicio2.jpg';
+import IMG2 from '../../assets/img/inicio.jpg';
 
 
-export default function Inicial() {
-  return (
+const Inicial = () => {
+    return (
       <>
-          
-          <Container className='d-flex '>
+         
+         
+       
         
-              <h1>ValDisnei</h1>
-    
-          </Container>
+        
+        
       </>
-  )
-}
+    );
+  }
+  
+  export default Inicial;
