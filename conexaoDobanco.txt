@@ -9,5 +9,3 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 # MANIPULANDO ESTRUTURAS (TABELAS)
 spring.jpa.hibernate.ddl-auto=update
-
-isso
