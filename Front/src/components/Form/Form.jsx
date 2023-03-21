@@ -20,8 +20,9 @@ const Form = () => {
   
   return(
   
+
  <div className="d-flex justify-content-center">
-      <form  className="containerLogin">
+      <form  className="containerLogin" >
     <div class = "form-group">
         <h2>Entrar</h2>
       <label for="exampleInputEmail1">Email</label>
