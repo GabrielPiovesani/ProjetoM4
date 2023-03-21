@@ -4,7 +4,7 @@ import Catalogo from './pages/Catalogo/Catalogo.jsx';
 import Inicio from './pages/Inicio/Inicio.jsx'
 import Login from './pages/Login/Login.jsx';
 import Cadastro from './pages/Cadastro/Cadastro.jsx';
-
+import PlaylistsPage from './pages/MinhasPlaylist/MinhaPLaylist.jsx';
 
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
       <Route path="/home" element={<Catalogo />} />
       <Route path="/login" element={<Login />}/>
       <Route path="/cadastro" element={<Cadastro/>} />
+      <Route path="/playlist" element={<PlaylistsPage/>}/>
       </Routes>
         </Router> 
     </div>
