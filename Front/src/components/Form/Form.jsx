@@ -21,7 +21,7 @@ const Form = () => {
   return(
   
  <div className="d-flex justify-content-center">
-      <form className="containerLogin">
+      <form  className="containerLogin">
     <div class = "form-group">
         <h2>Entrar</h2>
       <label for="exampleInputEmail1">Email</label>
@@ -33,7 +33,7 @@ const Form = () => {
       <input  type="password" class="form-control" id="exampleInputPassword1" placeholder="senha"></input>
     </div>
     <div className={style.buttonLogin}>
-<button  type="submit" class="btn btn-success"onClick={FormValidacao}>
+<button  type="submit" class="btn btn-info"onClick={FormValidacao}>
   Enviar </button>
 <p>Não tem ValDisnei?  <Link to= "/cadastro">Assine</Link></p>
 </div>
