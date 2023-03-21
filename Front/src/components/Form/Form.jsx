@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import style from '../LoginMenu/Login.module.css';
 import {validaEmail} from './FormValidacao';
+import { Link } from 'react-router-dom';
+
 
 const Form = () => {
 
@@ -33,7 +35,7 @@ const Form = () => {
     <div className={style.buttonLogin}>
 <button  type="submit" class="btn btn-success"onClick={FormValidacao}>
   Enviar </button>
-<p>Não tem ValDisnei? Assine</p>
+<p>Não tem ValDisnei?  <Link to= "/cadastro">Assine</Link></p>
 </div>
       </form>
 
