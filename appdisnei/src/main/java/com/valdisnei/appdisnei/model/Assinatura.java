@@ -1,9 +1,12 @@
 package com.valdisnei.appdisnei.model;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDate;
 @Entity
+@Getter @Setter @Builder
+@AllArgsConstructor @NoArgsConstructor
 public class Assinatura {
 
     @Id
@@ -16,33 +19,4 @@ public class Assinatura {
 
     private LocalDate dataDeExpiracao;
 
-//CONSTRUTOR
-    public Assinatura() {
-    }
-
-    public Assinatura(int id, String planos, double valorAssinatura, LocalDate dataDeExpiracao) {
-        this.id = id;
-        this.planos = planos;
-        this.valorAssinatura = valorAssinatura;
-        this.dataDeExpiracao = dataDeExpiracao;
-    }
-
-
-//    GET AND SET
-
-    public int getId() {
-        return id;
-    }
-
-    public String getPlanos() {
-        return planos;
-    }
-
-    public double getValorAssinatura() {
-        return valorAssinatura;
-    }
-
-    public LocalDate getDataDeExpiracao() {
-        return dataDeExpiracao;
-    }
 }
