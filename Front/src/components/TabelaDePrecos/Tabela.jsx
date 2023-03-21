@@ -14,7 +14,7 @@ function Tabela() {
               <Card.Text>
                 Este é o plano básico, com recursos limitados, ideal para quem está começando.
               </Card.Text>
-              <Button variant="primary">Assinar</Button>
+              <Button variant="primary" href="/cadastro" >Assinar</Button>
             </Card.Body>
           </Card>
         </div>
@@ -26,7 +26,7 @@ function Tabela() {
               <Card.Text>
                 Este é o plano intermediário, com mais recursos, perfeito para empresas em crescimento.
               </Card.Text>
-              <Button variant="primary" >Assinar</Button>
+              <Button variant="primary" href="/cadastro" >Assinar</Button>
             </Card.Body>
           </Card>
         </div>
@@ -38,7 +38,7 @@ function Tabela() {
               <Card.Text>
                 Este é o plano premium, com todos os recursos disponíveis, para empresas que precisam do melhor.
               </Card.Text>
-              <Button variant="primary">Assinar</Button>
+              <Button variant="primary" href="/cadastro">Assinar</Button>
             </Card.Body>
           </Card>
         </div>
