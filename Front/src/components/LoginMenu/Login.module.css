@@ -1,0 +1,75 @@
+
+form{
+    display: flex;
+    flex-direction: column; 
+    border-radius: 10px;
+    align-items: center;
+    margin-top: 0px;
+    width: 380px;
+    height: 400px;
+    border: 1px solid ;
+    margin: 10px;
+    padding: 0px;
+    background-color: rgba(11, 21, 24, 0.811);
+}
+#main #content-wrap {
+    padding-bottom: 0;
+    }
+.btn{
+    display: flex;
+    margin-top: 20px;
+
+}
+
+.containerLogin{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    align-items: center;
+
+}
+.form-group{
+    width: 290px;
+    align-items: center;
+}
+.formLogin{
+margin-top: 80px;
+
+}
+Label{
+    color: white;
+
+}
+input,
+#exampleInputPassword1,
+#exampleInputEmail1{
+    display: flex;
+    background-color: rgb(83, 79, 79);
+    border-color:  rgb(117, 112, 112);
+}
+form h2{
+    display: flex;
+    color: rgb(238, 231, 231);
+
+}
+
+.FooterLogin{
+    display: flex;
+    background-color: black;
+    height: 30px;
+    justify-content: center;
+    margin-top: 70px;
+    
+}
+p{
+    color: rgb(163, 165, 168);
+}
+nav img{
+    margin-left: 9px;
+}
+form p{
+    margin-top: 30px;
+}
+
+
+
