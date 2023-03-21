@@ -10,9 +10,9 @@ function Dispositivo() {
     <Container>
     <div className="m-5">
       <h2 className="text-center mb-4">Assista em seus dispositivos favoritos</h2>
-      <div className="d-flex justify-content-center m-4 ">
+      <div className="d-flex justify-content-center">
         <div className="row">
-          <div className="col-md-3 text-center"style={{ marginBottom: '200px' }}>
+          <div className="col-md-3 text-center"style={{ marginBottom: '55px' }}>
             <img src={celular} alt="Imagem 1" className="img-fluid mb-3" />
             <h5>smartphones</h5>
           </div>

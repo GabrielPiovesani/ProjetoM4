@@ -1,23 +1,39 @@
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Navbar, Nav, Button } from 'react-bootstrap';
+import logo from '../../assets/img/Logo.png';
+import React, { useState } from 'react';
 
 
-
-function Header() {
-    return (
-     <>
-        <Navbar bg="dark" variant="dark" >
-        <Container width="100%">
-          <Navbar.Brand to="/home">ValDisnei</Navbar.Brand>
-          <Nav className="me-auto">
-              <Nav.Link href='/home'>Home</Nav.Link>
-           <Nav.Link href="#features">Minhas Playlists</Nav.Link>
-            <Nav.Link href='/cadastro'>Cadastro</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
-    </>
-      
-    );
+export default function Header() {
+  const [username, setUsername] = useState('');
+ 
+  function handleLogin(username) {
+    // Aqui você faria a lógica de autenticação e definiria o nome de usuário na variável de estado
+    setUsername(username);
+   
   }
-  
-  export default Header;
+
+  return (
+    <div>
+      <Navbar style={{ backgroundColor: '#000000', boxShadow: '5 5px 10px rgba(0,0,0,0.5)' }} expand="lg">
+        <Navbar.Brand>
+          <img
+            src={logo}
+            width="130"
+            height="40"
+            className="d-inline-block align-top"
+            alt="Logo"
+          />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Nav className="w-100 justify-content-center" >
+          <Nav.Link  style={{ color: 'white', fontSize: '20px' }} href="/cadastrar">Biblioteca</Nav.Link>
+          <Nav.Link  style={{ color: 'white', fontSize: '20px' }} href="/login">Minhas Playlists</Nav.Link>
+        </Nav>
+        <Navbar.Collapse id="basic-navbar-nav">
+        
+          {username && <p>{username}</p>}
+        </Navbar.Collapse>
+      </Navbar>
+    </div>
+  );
+}

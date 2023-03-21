@@ -1,121 +1,72 @@
-import { Form, Row,Col, FormGroup, Label,Input, Button } from "reactstrap"
-import React from "react"
+import { useState } from "react";
+import { Form, Button, Alert } from "react-bootstrap";
 
 
+function Formulario() {
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [confirmSenha, setConfirmSenha] = useState("");
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [feedbackMsg, setFeedbackMsg] = useState("");
 
-export default function Formulario(){
-    return(
-        <Form className="p-5">
-        <Row>
-          <Col md={6}>
-            <FormGroup>
-              <Label for="exampleEmail" 
-              className="text-white">
-                E-mail
-              </Label>
-              <Input
-                id="exampleEmail"
-                name="email"
-                placeholder="Digite seu E-mail"
-                type="email"
-              />
-            </FormGroup>
-          </Col>
-          <Col md={6}>
-            <FormGroup>
-              <Label for="examplePassword" 
-              className="text-white">
-                Senha
-              </Label>
-              <Input
-                id="examplePassword"
-                name="password"
-                placeholder="Digite sua senha"
-                type="password"
-              />
-            </FormGroup>
-          </Col>
-        </Row>
-        <FormGroup>
-          <Label for="exampleAddress" 
-          className="text-white">
-            Endereço
-          </Label>
-          <Input
-            id="exampleAddress"
-            name="address"
-            placeholder="Digite seu endereço"
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Verifica se as senhas são iguais
+    if (senha !== confirmSenha) {
+      setShowFeedback(true);
+      setFeedbackMsg("As senhas não coincidem.");
+      return;
+    }
+
+    // Faz o cadastro do usuário
+    console.log(`Nome: ${nome}, Email: ${email}, Senha: ${senha}, Confirmação de senha: ${confirmSenha}`);
+
+    // Exibe uma mensagem de sucesso para o usuário
+    setShowFeedback(true);
+    setFeedbackMsg("Cadastro realizado com sucesso!");
+  };
+
+  return (
+    <div className="d-flex justify-content-center mt-5" >
+      <Form onSubmit={handleSubmit}>
+        {showFeedback && (
+          <Alert variant={feedbackMsg.includes("sucesso") ? "success" : "danger"} onClose={() => setShowFeedback(false)} dismissible>
+            {feedbackMsg}
+          </Alert>
+        )}
+        <Form.Group controlId="nome">
+          <Form.Label>Nome</Form.Label>
+          <Form.Control type="text" placeholder="Digite seu nome" value={nome} onChange={(e) => setNome(e.target.value)} />
+        </Form.Group>
+
+        <Form.Group controlId="email">
+          <Form.Label>Email</Form.Label>
+          <Form.Control type="email" placeholder="Digite seu email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        </Form.Group>
+
+        <Form.Group controlId="senha">
+          <Form.Label>Senha</Form.Label>
+          <Form.Control type="password" placeholder="Digite sua senha" value={senha} onChange={(e) => setSenha(e.target.value)} />
+        </Form.Group>
+
+        <Form.Group controlId="confirm-senha">
+          <Form.Label>Confirmar senha</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Digite novamente sua senha"
+            value={confirmSenha}
+            onChange={(e) => setConfirmSenha(e.target.value)}
           />
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleAddress2"
-           className="text-white">
-            Telefone
-          </Label>
-          <Input
-            id="exampleAddress2"
-            name="address2"
-            placeholder="Digite seu telefone"
-          />
-        </FormGroup>
-        <Row>
-          <Col md={6}>
-            <FormGroup>
-              <Label for="exampleCity" 
-              className="text-white">
-                Cidade
-              </Label>
-              <Input
-                id="exampleCity"
-                name="city"
-              />
-            </FormGroup>
-          </Col>
-          <Col md={4}>
-            <FormGroup>
-              <Label for="exampleState" 
-              className="text-white">
-                Estado
-              </Label>
-              <Input
-                id="exampleState"
-                name="state"
-              />
-            </FormGroup>
-          </Col>
-          <Col md={2}>
-            <FormGroup>
-              <Label for="exampleZip" 
-              className="text-white">
-                CEP
-              </Label>
-              <Input
-                id="exampleZip"
-                name="zip"
-              />
-            </FormGroup>
-          </Col>
-        </Row>
-        <FormGroup check>
-          <Input
-            id="exampleCheck"
-            name="check"
-            type="checkbox"
-          />
-          <Label
-            check
-            for="exampleCheck"
-            className="text-white"
-          >
-            Check me out
-          </Label>
-        </FormGroup>
-        <Button>
-          Sign in
+        </Form.Group>
+
+        <Button variant="primary" type="submit">
+          Cadastrar
         </Button>
       </Form>
-
-    )
+    </div>
+  );
 }
 
-
+export default Formulario;
