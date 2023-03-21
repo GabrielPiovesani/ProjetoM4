@@ -6,7 +6,7 @@ function Tabela() {
     return (
         <Container>
         <div className="d-flex justify-content-center">
-        <div className="col-md-3">
+        <div className="m-3">
           <Card style={{ width: "18rem" }}>
             <Card.Body className="text-center my-4">
               <Card.Title className="display-6">Básico</Card.Title>
@@ -18,7 +18,7 @@ function Tabela() {
             </Card.Body>
           </Card>
         </div>
-        <div className="col-md-3">
+        <div className="m-3">
           <Card style={{ width: "18rem" }}>
             <Card.Body className="text-center my-4">
               <Card.Title className="display-6"> Intermediário</Card.Title>
@@ -30,7 +30,7 @@ function Tabela() {
             </Card.Body>
           </Card>
         </div>
-        <div className="col-md-3">
+        <div className="m-3">
           <Card style={{ width: "18rem" }}>
             <Card.Body className="text-center my-4">
               <Card.Title className="display-6"> Premium</Card.Title>
