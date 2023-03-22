@@ -4,8 +4,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.*;
 
 @Entity
+@Getter @Setter
+@AllArgsConstructor @NoArgsConstructor
 public class Musico extends Artista {
 
     @Id
@@ -13,28 +16,5 @@ public class Musico extends Artista {
     private int id;
     private String atuacao;
 
-    // Constructor
 
-
-    public Musico() {
-    }
-
-    public Musico(String atuacao) {
-        this.atuacao = atuacao;
-    }
-
-    // get e set
-
-
-    public int getId() {
-        return id;
-    }
-
-    public String getAtuacao() {
-        return atuacao;
-    }
-
-    public void setAtuacao(String atuacao) {
-        this.atuacao = atuacao;
-    }
 }
