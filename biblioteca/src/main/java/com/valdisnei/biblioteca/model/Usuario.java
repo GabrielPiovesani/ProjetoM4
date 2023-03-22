@@ -1,6 +1,9 @@
 package com.valdisnei.biblioteca.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,12 +14,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class MusicaModel extends MidiaModel{
+public class Usuario {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private double duracao;
-    private int nota;
-    @OneToOne
-    private ArtistaModel artista;
+    private String nome;
+    private String senha;
+    private String email;
 }

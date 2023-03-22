@@ -1,7 +1,7 @@
 package com.valdisnei.biblioteca.controller;
 
-import com.valdisnei.biblioteca.model.BibliotecaModel;
-import com.valdisnei.biblioteca.model.PlaylistModel;
+import com.valdisnei.biblioteca.model.Biblioteca;
+import com.valdisnei.biblioteca.model.Playlist;
 import com.valdisnei.biblioteca.repository.BibliotecaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,14 +19,14 @@ public class BibliotecaController {
     private BibliotecaRepository bibliotecaRepository;
 
     @GetMapping
-    public ResponseEntity<List<BibliotecaModel>> listarBibliotecas() {
-        List<BibliotecaModel> bibliotecas = bibliotecaRepository.findAll();
+    public ResponseEntity<List<Biblioteca>> listarBibliotecas() {
+        List<Biblioteca> bibliotecas = bibliotecaRepository.findAll();
         return ResponseEntity.ok(bibliotecas);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<BibliotecaModel> buscarBibliotecaPorId(@PathVariable Long id) {
-        Optional<BibliotecaModel> existingBiblioteca = bibliotecaRepository.findById(id);
+    public ResponseEntity<Biblioteca> buscarBibliotecaPorId(@PathVariable Long id) {
+        Optional<Biblioteca> existingBiblioteca = bibliotecaRepository.findById(id);
 
         if (existingBiblioteca.isPresent()) {
             return ResponseEntity.ok(existingBiblioteca.get());
@@ -36,22 +36,22 @@ public class BibliotecaController {
     }
 
     @PostMapping
-    public ResponseEntity<BibliotecaModel> criarBiblioteca(@RequestBody BibliotecaModel biblioteca) {
-        BibliotecaModel novaBiblioteca = bibliotecaRepository.save(biblioteca);
+    public ResponseEntity<Biblioteca> criarBiblioteca(@RequestBody Biblioteca biblioteca) {
+        Biblioteca novaBiblioteca = bibliotecaRepository.save(biblioteca);
         return ResponseEntity.status(HttpStatus.CREATED).body(novaBiblioteca);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<BibliotecaModel> atualizarBiblioteca(@PathVariable Long id, @RequestBody BibliotecaModel bibliotecaAtualizada) {
-        Optional<BibliotecaModel> existingBiblioteca = bibliotecaRepository.findById(id);
+    public ResponseEntity<Biblioteca> atualizarBiblioteca(@PathVariable Long id, @RequestBody Biblioteca bibliotecaAtualizada) {
+        Optional<Biblioteca> existingBiblioteca = bibliotecaRepository.findById(id);
 
         if (existingBiblioteca.isPresent()) {
-            BibliotecaModel biblioteca = existingBiblioteca.get();
+            Biblioteca biblioteca = existingBiblioteca.get();
             biblioteca.setUsuario(bibliotecaAtualizada.getUsuario());
             biblioteca.setMusicas(bibliotecaAtualizada.getMusicas());
             biblioteca.setFilmes(bibliotecaAtualizada.getFilmes());
             biblioteca.setPlaylist(bibliotecaAtualizada.getPlaylist());
-            BibliotecaModel bibliotecaAtualizadaNoBanco = bibliotecaRepository.save(biblioteca);
+            Biblioteca bibliotecaAtualizadaNoBanco = bibliotecaRepository.save(biblioteca);
             return ResponseEntity.ok(bibliotecaAtualizadaNoBanco);
         } else {
             return ResponseEntity.notFound().build();
@@ -59,8 +59,8 @@ public class BibliotecaController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<BibliotecaModel> deletarBiblioteca(@PathVariable Long id) {
-        Optional<BibliotecaModel> existingBiblioteca = bibliotecaRepository.findById(id);
+    public ResponseEntity<Biblioteca> deletarBiblioteca(@PathVariable Long id) {
+        Optional<Biblioteca> existingBiblioteca = bibliotecaRepository.findById(id);
 
         if (existingBiblioteca.isPresent()) {
             bibliotecaRepository.deleteById(id);
@@ -72,11 +72,11 @@ public class BibliotecaController {
 
     @GetMapping("/{id}/playlists/{playlistId}/tocar")
     public ResponseEntity<String> tocarPlaylist(@PathVariable Long id, @PathVariable Long playlistId) {
-        Optional<BibliotecaModel> existingBiblioteca = bibliotecaRepository.findById(id);
+        Optional<Biblioteca> existingBiblioteca = bibliotecaRepository.findById(id);
 
         if (existingBiblioteca.isPresent()) {
-            BibliotecaModel biblioteca = existingBiblioteca.get();
-            Optional<PlaylistModel> playlist = biblioteca.getPlaylist().stream().filter(p -> p.getId().equals(playlistId)).findFirst();
+            Biblioteca biblioteca = existingBiblioteca.get();
+            Optional<Playlist> playlist = biblioteca.getPlaylist().stream().filter(p -> p.getId().equals(playlistId)).findFirst();
             if (playlist.isPresent()) {
                 String mensagem = "Tocando playlist " + playlist.get().getNome();
                 return ResponseEntity.ok(mensagem);

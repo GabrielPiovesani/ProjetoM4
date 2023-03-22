@@ -1,6 +1,6 @@
 package com.valdisnei.biblioteca.controller;
 
-import com.valdisnei.biblioteca.model.PlaylistModel;
+import com.valdisnei.biblioteca.model.Playlist;
 import com.valdisnei.biblioteca.repository.PlaylistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,14 +18,14 @@ public class PlaylistController {
     private PlaylistRepository playlistRepository;
 
     @GetMapping
-    public ResponseEntity<List<PlaylistModel>> listarPlaylists() {
-        List<PlaylistModel> playlists = playlistRepository.findAll();
+    public ResponseEntity<List<Playlist>> listarPlaylists() {
+        List<Playlist> playlists = playlistRepository.findAll();
         return ResponseEntity.ok(playlists);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PlaylistModel> buscarPlaylistPorId(@PathVariable Long id) {
-        Optional<PlaylistModel> existingPlaylist = playlistRepository.findById(id);
+    public ResponseEntity<Playlist> buscarPlaylistPorId(@PathVariable Long id) {
+        Optional<Playlist> existingPlaylist = playlistRepository.findById(id);
 
         if (existingPlaylist.isPresent()) {
             return ResponseEntity.ok(existingPlaylist.get());
@@ -35,22 +35,22 @@ public class PlaylistController {
     }
 
     @PostMapping
-    public ResponseEntity<PlaylistModel> criarPlaylist(@RequestBody PlaylistModel playlist) {
-        PlaylistModel novaPlaylist = playlistRepository.save(playlist);
+    public ResponseEntity<Playlist> criarPlaylist(@RequestBody Playlist playlist) {
+        Playlist novaPlaylist = playlistRepository.save(playlist);
         return ResponseEntity.status(HttpStatus.CREATED).body(novaPlaylist);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<PlaylistModel> atualizarPlaylist(@PathVariable Long id, @RequestBody PlaylistModel playlistAtualizada) {
-        Optional<PlaylistModel> existingPlaylist = playlistRepository.findById(id);
+    public ResponseEntity<Playlist> atualizarPlaylist(@PathVariable Long id, @RequestBody Playlist playlistAtualizada) {
+        Optional<Playlist> existingPlaylist = playlistRepository.findById(id);
 
         if (existingPlaylist.isPresent()) {
-            PlaylistModel playlist = existingPlaylist.get();
+            Playlist playlist = existingPlaylist.get();
             playlist.setMusicas(playlistAtualizada.getMusicas());
             playlist.setMusicas(playlistAtualizada.getMusicas());
             playlist.setOrdem(playlistAtualizada.getOrdem());
             playlist.setMidiaAtual(playlistAtualizada.getMidiaAtual());
-            PlaylistModel playlistAtualizadaNoBanco = playlistRepository.save(playlist);
+            Playlist playlistAtualizadaNoBanco = playlistRepository.save(playlist);
             return ResponseEntity.ok(playlistAtualizadaNoBanco);
         } else {
             return ResponseEntity.notFound().build();
@@ -58,8 +58,8 @@ public class PlaylistController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<PlaylistModel> deletarPlaylist(@PathVariable Long id) {
-        Optional<PlaylistModel> existingPlaylist = playlistRepository.findById(id);
+    public ResponseEntity<Playlist> deletarPlaylist(@PathVariable Long id) {
+        Optional<Playlist> existingPlaylist = playlistRepository.findById(id);
 
         if (existingPlaylist.isPresent()) {
             playlistRepository.deleteById(id);
