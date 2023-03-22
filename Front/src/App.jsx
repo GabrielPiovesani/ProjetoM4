@@ -16,8 +16,9 @@ function App() {
       <Route path='/' element={<Inicio/>} />
       <Route path="/home" element={<Catalogo />} />
       <Route path="/login" element={<Login />}/>
-      <Route path="/cadastro" element={<Cadastro/>} />
-      <Route path="/playlist" element={<PlaylistsPage/>}/>
+      <Route path="/biblioteca" element={<Catalogo/>} />
+          <Route path="/playlist" element={<PlaylistsPage />} />
+          <Route path="/cadastro" element={<Cadastro/>}/>
       </Routes>
         </Router> 
     </div>
