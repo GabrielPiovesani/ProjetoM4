@@ -9,7 +9,7 @@ import IMG2 from '../../assets/img/inicio.jpg';
 const Inicial = () => {
     return (
       
-      <Container className="d-flex align-items-center justify-content-center mb-4">
+      <Container className="d-flex align-items-center justify-content-center m-5">
       <h1>Assista e ouça as suas mídias em um único lugar</h1>
       </Container>
          
