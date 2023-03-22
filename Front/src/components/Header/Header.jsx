@@ -26,8 +26,8 @@ export default function Header() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Nav className="w-100 justify-content-center" >
-          <Nav.Link  style={{ color: 'white', fontSize: '20px' }} href="/cadastrar">Biblioteca</Nav.Link>
-          <Nav.Link  style={{ color: 'white', fontSize: '20px' }} href="/login">Minhas Playlists</Nav.Link>
+          <Nav.Link  style={{ color: 'white', fontSize: '20px' }} href="/biblioteca">Biblioteca</Nav.Link>
+          <Nav.Link  style={{ color: 'white', fontSize: '20px' }} href="/playlist">Minhas Playlists</Nav.Link>
         </Nav>
         <Navbar.Collapse id="basic-navbar-nav">
         

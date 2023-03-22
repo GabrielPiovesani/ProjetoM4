@@ -1,6 +1,5 @@
 import React from 'react';
-import './Login.module.css'
-
+import './Login.module.css';
 
 const LoginMenu=()=>{
     return(
