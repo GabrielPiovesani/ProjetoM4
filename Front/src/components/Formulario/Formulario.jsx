@@ -31,11 +31,13 @@ function Formulario() {
   return (
     <div className="d-flex justify-content-center mt-5" >
       <Form onSubmit={handleSubmit}>
+
         {showFeedback && (
           <Alert variant={feedbackMsg.includes("sucesso") ? "success" : "danger"} onClose={() => setShowFeedback(false)} dismissible>
             {feedbackMsg}
           </Alert>
         )}
+        
         <Form.Group controlId="nome">
           <Form.Label>Nome</Form.Label>
           <Form.Control type="text" placeholder="Digite seu nome" value={nome} onChange={(e) => setNome(e.target.value)} />

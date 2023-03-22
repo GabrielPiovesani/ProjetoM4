@@ -15,10 +15,11 @@ export default function Header() {
   return (
     <div>
       <Navbar style={{ backgroundColor: '#000000', boxShadow: '5 5px 10px rgba(0,0,0,0.5)' }} expand="lg">
+
         <Navbar.Brand>
           <img
             src={logo}
-            width="130"
+            width="100"
             height="40"
             className="d-inline-block align-top"
             alt="Logo"

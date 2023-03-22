@@ -22,6 +22,7 @@ h1, h2, h3, h4, h5, h6, a , span{
 }
 
 
+
 /* === Configuraçoes da página Login === */ 
 .Login-background {
   background-image: url(../src/assets/img/fundoImg.png) !important;
