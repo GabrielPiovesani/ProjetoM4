@@ -1,7 +1,8 @@
 import React from 'react';
 import LoginMenu from '../../components/LoginMenu/LoginMenu.jsx';
 import Form from '../../components/Form/Form.jsx';
-import Footer from '../../components/Footer/Footer.jsx';
+import Footer from '../../components/Footer/Footer.jsx'
+
 
 const Login =()=> {
     return (
@@ -9,8 +10,12 @@ const Login =()=> {
         <div className="Login-background">
          <LoginMenu/>
          <Form/>
-         <Footer></Footer>
+
+      
+         <Footer/>
+
         </div>     
+    
 
     );
 }
