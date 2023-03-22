@@ -22,16 +22,22 @@ h1, h2, h3, h4, h5, h6, a , span{
 }
 
 
+
 /* === Configuraçoes da página Login === */ 
 .Login-background {
   background-image: url(../src/assets/img/fundoImg.png) !important;
   width: 100vw;
   height: 100vh;
+
 }
 button .btn btn-info{
   display: flex;
   margin-top: 78%;
 }
+.containerLogin{
+  margin-top: 60px;
+}
+
 
 
 
