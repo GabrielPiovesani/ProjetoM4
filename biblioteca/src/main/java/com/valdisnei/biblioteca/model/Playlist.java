@@ -13,15 +13,15 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class PlaylistModel {
+public class Playlist {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @OneToMany
-    private List<MusicaModel> musicas;
+    private List<Musica> musicas;
     @OneToMany
-    private List<FilmeModel> filmes;
+    private List<Filme> filmes;
     private int ordem;
     private int midiaAtual;
     private String nome;

@@ -1,6 +1,6 @@
 package com.valdisnei.biblioteca.controller;
 
-import com.valdisnei.biblioteca.model.MusicaModel;
+import com.valdisnei.biblioteca.model.Musica;
 import com.valdisnei.biblioteca.repository.MusicaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,8 +19,8 @@ public class MusicaController {
 
 
     @GetMapping("/{id}")
-    public ResponseEntity<MusicaModel> getMusicaById(@PathVariable Long id) {
-        Optional<MusicaModel> musica = musicaRepository.findById(id);
+    public ResponseEntity<Musica> getMusicaById(@PathVariable Long id) {
+        Optional<Musica> musica = musicaRepository.findById(id);
 
         if (musica.isPresent()) {
             return ResponseEntity.ok(musica.get());
@@ -31,19 +31,19 @@ public class MusicaController {
 
 
     @PostMapping("/musica/add")
-    public ResponseEntity<MusicaModel> createMusica(@RequestBody MusicaModel musica) {
-        MusicaModel newMusica = musicaRepository.save(musica);
+    public ResponseEntity<Musica> createMusica(@RequestBody Musica musica) {
+        Musica newMusica = musicaRepository.save(musica);
         return ResponseEntity.status(HttpStatus.CREATED).body(newMusica);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<MusicaModel> updateMusica(@PathVariable Long id, @RequestBody MusicaModel musica) {
-        Optional<MusicaModel> existingMusica = musicaRepository.findById(id);
+    public ResponseEntity<Musica> updateMusica(@PathVariable Long id, @RequestBody Musica musica) {
+        Optional<Musica> existingMusica = musicaRepository.findById(id);
 
         if (existingMusica.isPresent()) {
-            MusicaModel updatedMusica = existingMusica.get();
+            Musica updatedMusica = existingMusica.get();
             updatedMusica.setDuracao(musica.getDuracao());
-            updatedMusica.setArtista(musica.getArtista());
+            updatedMusica.setMusico(musica.getMusico());
             updatedMusica.setNota(musica.getNota());
             musicaRepository.save(updatedMusica);
             return ResponseEntity.ok(updatedMusica);
@@ -51,10 +51,20 @@ public class MusicaController {
             return ResponseEntity.notFound().build();
         }
     }
+    @GetMapping("/{id}/title")
+    public String getMovieTitle(@PathVariable Long id) {
+        Optional<Musica> movieOptional = musicaRepository.findById(id);
+        if (movieOptional.isPresent()) {
+            Musica movie = movieOptional.get();
+            return movie.getTitulo();
+        } else {
+            throw new RuntimeException("Movie not found with id " + id);
+        }
+    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteMusica(@PathVariable Long id) {
-        Optional<MusicaModel> musica = musicaRepository.findById(id);
+        Optional<Musica> musica = musicaRepository.findById(id);
 
         if (musica.isPresent()) {
             musicaRepository.delete(musica.get());
