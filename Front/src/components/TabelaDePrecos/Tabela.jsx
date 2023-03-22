@@ -24,7 +24,7 @@ function Tabela() {
               <Card.Title className="display-6"> Intermediário</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">R$ 29.90/mês</Card.Subtitle>
               <Card.Text>
-                Este é o plano intermediário, com mais recursos, perfeito para empresas em crescimento.
+                Plano mensal, com mais recursos, perfeito para quem gosta de aproveitar o momento.
               </Card.Text>
               <Button variant="primary" href="/cadastro" >Assinar</Button>
             </Card.Body>
