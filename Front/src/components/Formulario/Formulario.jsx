@@ -29,8 +29,11 @@ function Formulario() {
   };
 
   return (
-    <div className="d-flex justify-content-center mt-5" >
-      <Form onSubmit={handleSubmit}>
+    <div className="d-flex justify-content-center mt-0" >
+      <Form className="formCadastro" onSubmit={handleSubmit}>
+        <h4>Criar Conta</h4>
+        <div className="textcadastro">
+        <p>Crie a sua única conta para todos os produtos ValDisnei</p></div>
 
         {showFeedback && (
           <Alert variant={feedbackMsg.includes("sucesso") ? "success" : "danger"} onClose={() => setShowFeedback(false)} dismissible>
@@ -62,8 +65,7 @@ function Formulario() {
             onChange={(e) => setConfirmSenha(e.target.value)}
           />
         </Form.Group>
-
-        <Button variant="primary" type="submit">
+        <Button className="btnFormulario" variant="primary" type="submit">
           Cadastrar
         </Button>
       </Form>

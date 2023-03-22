@@ -1,4 +1,4 @@
-import { Navbar, Nav, Button } from 'react-bootstrap';
+import { Navbar, Nav, Button, Form } from 'react-bootstrap';
 import logo from '../../assets/img/Logo.png';
 import React, { useState } from 'react';
 
@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <div>
-      <Navbar style={{ backgroundColor: '#000000', boxShadow: '5 5px 10px rgba(0,0,0,0.5)' }} expand="lg">
+      <Navbar style={{ backgroundColor: '#000000', boxShadow: '5 5px 10px rgba(0,0,0,0.5)' }} expand="1g">
 
         <Navbar.Brand>
           <img
@@ -25,16 +25,18 @@ export default function Header() {
             alt="Logo"
           />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Nav className="w-100 justify-content-center" >
+        {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> 
+         <Nav className="w-100 justify-content-center" >
           <Nav.Link  style={{ color: 'white', fontSize: '20px' }} href="/biblioteca">Biblioteca</Nav.Link>
           <Nav.Link  style={{ color: 'white', fontSize: '20px' }} href="/playlist">Minhas Playlists</Nav.Link>
-        </Nav>
+        </Nav>  */}
         <Navbar.Collapse id="basic-navbar-nav">
-        
           {username && <p>{username}</p>}
         </Navbar.Collapse>
       </Navbar>
+
+
+
     </div>
   );
 }
