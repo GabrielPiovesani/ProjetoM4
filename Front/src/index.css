@@ -39,5 +39,16 @@ button .btn btn-info{
 }
 
 
+.form-control{min-width:250px;}
+.btnFormulario{
+  margin-top: 10px;
+}
+.formCadastro{
+  height: 500px;
+}
+.textcadastro{
+  text-align: center;
+}
+
 
 
