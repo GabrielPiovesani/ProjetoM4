@@ -20,6 +20,7 @@ function App() {
       <Route path="/cadastro" element={<Cadastro/>} />
       <Route path="/playlist" element={<PlaylistsPage />} />
       <Route path="/mediaplayer" element={<TocadorPlaylist/>}/>
+
       </Routes>
         </Router> 
     </div>

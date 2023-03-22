@@ -5,7 +5,7 @@ import { Card, Button, Container } from "react-bootstrap";
 function Tabela() {
     return (
         <Container>
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center m-4">
         <div className="m-3">
           <Card style={{ width: "18rem" }}>
             <Card.Body className="text-center my-4">
@@ -43,8 +43,9 @@ function Tabela() {
           </Card>
         </div>
         </div>
-        
         </Container>
+        
+        
   
   );
 }
