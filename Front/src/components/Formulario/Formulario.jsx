@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 
 
+
 function Formulario() {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
@@ -66,11 +67,14 @@ function Formulario() {
           />
         </Form.Group>
         <Button className="btnFormulario" variant="primary" type="submit">
-          Cadastrar
+         Cadastrar
+       
         </Button>
       </Form>
     </div>
+    
   );
+  
 }
 
 export default Formulario;
