@@ -66,9 +66,8 @@ function Formulario() {
             onChange={(e) => setConfirmSenha(e.target.value)}
           />
         </Form.Group>
-        <Button className="btnFormulario" variant="primary" type="submit">
-         Cadastrar
-       
+        <Button className="btnFormulario"  variant="primary" type="submit">
+          Cadastrar
         </Button>
       </Form>
     </div>

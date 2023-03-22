@@ -6,18 +6,21 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ArtistaModel {
-
+public class Filme extends Midia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
-    private String dataNascimento;
-    private String premiacoes;
-    private String genero;
+    private double duracao;
+    private String tipo;
+    @OneToMany
+    private List<Ator> elenco;
+    private String diretor;
+    private String produtor;
 }

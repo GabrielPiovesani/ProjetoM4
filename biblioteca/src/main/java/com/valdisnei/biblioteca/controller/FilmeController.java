@@ -1,6 +1,6 @@
 package com.valdisnei.biblioteca.controller;
 
-import com.valdisnei.biblioteca.model.FilmeModel;
+import com.valdisnei.biblioteca.model.Filme;
 import com.valdisnei.biblioteca.repository.FilmeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,8 +17,8 @@ public class FilmeController {
     private FilmeRepository filmeRepository;
 
     @GetMapping("/{id}")
-    public ResponseEntity<FilmeModel> getFilmeById(@PathVariable Long id) {
-        Optional<FilmeModel> filme = filmeRepository.findById(id);
+    public ResponseEntity<Filme> getFilmeById(@PathVariable Long id) {
+        Optional<Filme> filme = filmeRepository.findById(id);
 
         if (filme.isPresent()) {
             return ResponseEntity.ok(filme.get());
@@ -28,17 +28,17 @@ public class FilmeController {
     }
 
     @PostMapping
-    public ResponseEntity<FilmeModel> createFilme(@RequestBody FilmeModel filme) {
-        FilmeModel newFilme = filmeRepository.save(filme);
+    public ResponseEntity<Filme> createFilme(@RequestBody Filme filme) {
+        Filme newFilme = filmeRepository.save(filme);
         return ResponseEntity.status(HttpStatus.CREATED).body(newFilme);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<FilmeModel> updateFilme(@PathVariable Long id, @RequestBody FilmeModel filme) {
-        Optional<FilmeModel> existingFilme = filmeRepository.findById(id);
+    public ResponseEntity<Filme> updateFilme(@PathVariable Long id, @RequestBody Filme filme) {
+        Optional<Filme> existingFilme = filmeRepository.findById(id);
 
         if (existingFilme.isPresent()) {
-            FilmeModel updatedFilme = existingFilme.get();
+            Filme updatedFilme = existingFilme.get();
             updatedFilme.setDuracao(filme.getDuracao());
             updatedFilme.setTipo(filme.getTipo());
             updatedFilme.setElenco(filme.getElenco());
@@ -53,7 +53,7 @@ public class FilmeController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteFilme(@PathVariable Long id) {
-        Optional<FilmeModel> filme = filmeRepository.findById(id);
+        Optional<Filme> filme = filmeRepository.findById(id);
 
         if (filme.isPresent()) {
             filmeRepository.delete(filme.get());

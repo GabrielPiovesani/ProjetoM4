@@ -1,6 +1,6 @@
 package com.valdisnei.biblioteca.controller;
 
-import com.valdisnei.biblioteca.model.MusicoModel;
+import com.valdisnei.biblioteca.model.Musico;
 import com.valdisnei.biblioteca.repository.MusicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,14 +18,14 @@ public class MusicoController {
     private MusicoRepository musicoRepository;
 
     @GetMapping
-    public ResponseEntity<List<MusicoModel>> listarMusicos() {
-        List<MusicoModel> musicos = musicoRepository.findAll();
+    public ResponseEntity<List<Musico>> listarMusicos() {
+        List<Musico> musicos = musicoRepository.findAll();
         return ResponseEntity.ok(musicos);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<MusicoModel> buscarMusicoPorId(@PathVariable Long id) {
-        Optional<MusicoModel> existingMusico = musicoRepository.findById(id);
+    public ResponseEntity<Musico> buscarMusicoPorId(@PathVariable Long id) {
+        Optional<Musico> existingMusico = musicoRepository.findById(id);
 
         if (existingMusico.isPresent()) {
             return ResponseEntity.ok(existingMusico.get());
@@ -35,23 +35,23 @@ public class MusicoController {
     }
 
     @PostMapping
-    public ResponseEntity<MusicoModel> criarMusico(@RequestBody MusicoModel musico) {
-        MusicoModel novoMusico = musicoRepository.save(musico);
+    public ResponseEntity<Musico> criarMusico(@RequestBody Musico musico) {
+        Musico novoMusico = musicoRepository.save(musico);
         return ResponseEntity.status(HttpStatus.CREATED).body(novoMusico);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<MusicoModel> atualizarMusico(@PathVariable Long id, @RequestBody MusicoModel musicoAtualizado) {
-        Optional<MusicoModel> existingMusico = musicoRepository.findById(id);
+    public ResponseEntity<Musico> atualizarMusico(@PathVariable Long id, @RequestBody Musico musicoAtualizado) {
+        Optional<Musico> existingMusico = musicoRepository.findById(id);
 
         if (existingMusico.isPresent()) {
-            MusicoModel musico = existingMusico.get();
+            Musico musico = existingMusico.get();
             musico.setNome(musicoAtualizado.getNome());
             musico.setDataNascimento(musicoAtualizado.getDataNascimento());
             musico.setPremiacoes(musicoAtualizado.getPremiacoes());
             musico.setGenero(musicoAtualizado.getGenero());
             musico.setAtuacao(musicoAtualizado.getAtuacao());
-            MusicoModel musicoAtualizadoNoBanco = musicoRepository.save(musico);
+            Musico musicoAtualizadoNoBanco = musicoRepository.save(musico);
             return ResponseEntity.ok(musicoAtualizadoNoBanco);
         } else {
             return ResponseEntity.notFound().build();
@@ -59,8 +59,8 @@ public class MusicoController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<MusicoModel> deletarMusico(@PathVariable Long id) {
-        Optional<MusicoModel> existingMusico = musicoRepository.findById(id);
+    public ResponseEntity<Musico> deletarMusico(@PathVariable Long id) {
+        Optional<Musico> existingMusico = musicoRepository.findById(id);
 
         if (existingMusico.isPresent()) {
             musicoRepository.deleteById(id);

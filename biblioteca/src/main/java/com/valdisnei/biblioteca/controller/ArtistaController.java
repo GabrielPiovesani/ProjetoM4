@@ -1,12 +1,13 @@
 package com.valdisnei.biblioteca.controller;
 
-import com.valdisnei.biblioteca.model.ArtistaModel;
+import com.valdisnei.biblioteca.model.Artista;
 import com.valdisnei.biblioteca.repository.ArtistaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -16,9 +17,22 @@ public class ArtistaController {
     @Autowired
     private ArtistaRepository artistaRepository;
 
+    @GetMapping
+    public ResponseEntity<List<Artista>> getAll(){
+        var responponse =  artistaRepository.findAll();
+        if(responponse.isEmpty())
+            return ResponseEntity
+                    .status(HttpStatus.NOT_FOUND)
+                    .build();
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(responponse);
+
+    }
     @GetMapping("/{id}")
-    public ResponseEntity<ArtistaModel> getArtistaById(@PathVariable Long id) {
-        Optional<ArtistaModel> artista = artistaRepository.findById(id);
+    public ResponseEntity<Artista> getArtistaById(@PathVariable Long id) {
+        Optional<Artista> artista = artistaRepository.findById(id);
 
         if (artista.isPresent()) {
             return ResponseEntity.ok(artista.get());
@@ -28,17 +42,17 @@ public class ArtistaController {
     }
 
     @PostMapping
-    public ResponseEntity<ArtistaModel> createArtista(@RequestBody ArtistaModel artista) {
-        ArtistaModel newArtista = artistaRepository.save(artista);
+    public ResponseEntity<Artista> createArtista(@RequestBody Artista artista) {
+        Artista newArtista = artistaRepository.save(artista);
         return ResponseEntity.status(HttpStatus.CREATED).body(newArtista);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ArtistaModel> updateArtista(@PathVariable Long id, @RequestBody ArtistaModel artista) {
-        Optional<ArtistaModel> existingArtista = artistaRepository.findById(id);
+    public ResponseEntity<Artista> updateArtista(@PathVariable Long id, @RequestBody Artista artista) {
+        Optional<Artista> existingArtista = artistaRepository.findById(id);
 
         if (existingArtista.isPresent()) {
-            ArtistaModel updatedArtista = existingArtista.get();
+            Artista updatedArtista = existingArtista.get();
             updatedArtista.setNome(artista.getNome());
             updatedArtista.setDataNascimento(artista.getDataNascimento());
             updatedArtista.setPremiacoes(artista.getPremiacoes());
@@ -52,7 +66,7 @@ public class ArtistaController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteArtista(@PathVariable Long id) {
-        Optional<ArtistaModel> artista = artistaRepository.findById(id);
+        Optional<Artista> artista = artistaRepository.findById(id);
 
         if (artista.isPresent()) {
             artistaRepository.delete(artista.get());

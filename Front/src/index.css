@@ -38,7 +38,7 @@ button .btn btn-info{
   margin-top: 60px;
 }
 
-
+/* == Configuraçoes pagina cadastro == */
 .form-control{min-width:250px;}
 .btnFormulario{
   margin-top: 10px;
@@ -48,6 +48,13 @@ button .btn btn-info{
 }
 .textcadastro{
   text-align: center;
+}
+
+/* == Configuraçoes pagina home == */
+.mb-3:hover{
+  border: 1px solid #102453;
+  background-color: #0c1c3d;
+  border-radius: 10px;
 }
 
 

@@ -13,14 +13,19 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class FilmeModel extends MidiaModel{
+public class Biblioteca {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private double duracao;
-    private String tipo;
     @OneToMany
-    private List<AtorModel> elenco;
-    private String diretor;
-    private String produtor;
+    private List<Musica> musicas;
+    @OneToMany
+    private List<Filme> filmes;
+
+    @OneToOne
+    private Usuario usuario;
+
+    @OneToMany
+    private List<Playlist> playlist;
 }
