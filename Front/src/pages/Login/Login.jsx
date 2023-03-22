@@ -10,8 +10,6 @@ const Login =()=> {
         <div className="Login-background">
          <LoginMenu/>
          <Form/>
-
-      
          <Footer/>
 
         </div>     
