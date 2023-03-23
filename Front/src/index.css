@@ -22,6 +22,7 @@ h1, h2, h3, h4, h5, h6, a , span{
 }
 
 
+
 /* === Configuraçoes da página Login === */ 
 .Login-background {
   background-image: url(../src/assets/img/fundoImg.png) !important;
@@ -37,6 +38,24 @@ button .btn btn-info{
   margin-top: 60px;
 }
 
+/* == Configuraçoes pagina cadastro == */
+.form-control{min-width:250px;}
+.btnFormulario{
+  margin-top: 10px;
+}
+.formCadastro{
+  height: 530px;
+}
+.textcadastro{
+  text-align: center;
+}
+
+/* == Configuraçoes pagina home == */
+.mb-3:hover{
+  border: 1px solid #102453;
+  background-color: #0c1c3d;
+  border-radius: 10px;
+}
 
 
 

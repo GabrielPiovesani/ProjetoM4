@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 
 
+
 function Formulario() {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
@@ -29,13 +30,18 @@ function Formulario() {
   };
 
   return (
-    <div className="d-flex justify-content-center mt-5" >
-      <Form onSubmit={handleSubmit}>
+    <div className="d-flex justify-content-center mt-0" >
+      <Form className="formCadastro" onSubmit={handleSubmit}>
+        <h4>Criar Conta</h4>
+        <div className="textcadastro">
+        <p>Crie a sua única conta para todos os produtos ValDisnei</p></div>
+
         {showFeedback && (
           <Alert variant={feedbackMsg.includes("sucesso") ? "success" : "danger"} onClose={() => setShowFeedback(false)} dismissible>
             {feedbackMsg}
           </Alert>
         )}
+        
         <Form.Group controlId="nome">
           <Form.Label>Nome</Form.Label>
           <Form.Control type="text" placeholder="Digite seu nome" value={nome} onChange={(e) => setNome(e.target.value)} />
@@ -60,13 +66,14 @@ function Formulario() {
             onChange={(e) => setConfirmSenha(e.target.value)}
           />
         </Form.Group>
-
-        <Button variant="primary" type="submit">
+        <Button className="btnFormulario"  variant="primary" type="submit">
           Cadastrar
         </Button>
       </Form>
     </div>
+    
   );
+  
 }
 
 export default Formulario;

@@ -5,9 +5,9 @@ const LoginMenu=()=>{
     return(
         //Menubar da pagina//
             <div className ="MenuLogin">
-            <nav class="navbar navbar-dark bg-dark">
-            <div class="navbar-brand" href="#">
-            <img src="./src/assets/img/logoOfice.png" width="89" height="40" class="d-inline-block align-top" alt=""></img>
+            <nav className="navbar navbar-dark bg-black">
+            <div className="navbar-brand" href="#">
+            <img src="./src/assets/img/logoOfice.png" width="89" height="40" className="d-inline-block align-top" alt=""></img>
             </div>
           </nav>
         </div>
