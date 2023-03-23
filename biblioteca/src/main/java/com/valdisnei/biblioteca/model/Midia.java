@@ -8,8 +8,7 @@ import lombok.*;
 
 @MappedSuperclass
 @Getter @Setter
-@Builder
-@AllArgsConstructor @NoArgsConstructor
+@NoArgsConstructor
 public class Midia {
 
     @Id
@@ -19,4 +18,11 @@ public class Midia {
     private String titulo;
     private int ano;
     private String genero;
+
+    @Builder
+    public Midia(String titulo, int ano, String genero) {
+        this.titulo = titulo;
+        this.ano = ano;
+        this.genero = genero;
+    }
 }

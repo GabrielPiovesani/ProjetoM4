@@ -8,14 +8,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/midia")
 public class MidiaController {
 
     @Autowired
     private MidiaRepository midiaRepository;
-
+    @CrossOrigin
     @GetMapping("/{id}")
     public ResponseEntity<Midia> getMidiaById(@PathVariable Long id) {
         Optional<Midia> midia = midiaRepository.findById(id);

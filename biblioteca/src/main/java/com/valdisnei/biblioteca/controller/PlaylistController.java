@@ -10,19 +10,21 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+
 @RestController
+@CrossOrigin
 @RequestMapping("/playlists")
 public class PlaylistController {
 
     @Autowired
     private PlaylistRepository playlistRepository;
-
+    @CrossOrigin
     @GetMapping
     public ResponseEntity<List<Playlist>> listarPlaylists() {
         List<Playlist> playlists = playlistRepository.findAll();
         return ResponseEntity.ok(playlists);
     }
-
+    @CrossOrigin
     @GetMapping("/{id}")
     public ResponseEntity<Playlist> buscarPlaylistPorId(@PathVariable Long id) {
         Optional<Playlist> existingPlaylist = playlistRepository.findById(id);
