@@ -9,7 +9,8 @@ function Dispositivo() {
   return (
     <Container>
     <div className="m-5">
-      <h3 className="text-center mb-4">Assista em seus dispositivos favoritos</h3>
+    <h3 className="text-center mb-4">Assista séries, filmes e ouça músicas em um único lugar</h3>
+      <h4 className="text-center mb-4">Assista em seus dispositivos favoritos</h4>
       <div className="d-flex justify-content-center">
         <div className="row">
           <div className="col-md-3 text-center">

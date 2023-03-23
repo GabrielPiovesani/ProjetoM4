@@ -1,5 +1,5 @@
 
-import Img1 from '../../assets/img/Serie/Avatar.jpg'
+import Img1 from '../../assets/img/Filmes/batman.png'
 import Img2 from '../../assets/img/Serie/Vingadores.jpg'
 import Img3 from '../../assets/img/Serie/gatoDeBotas1.png'
 
@@ -15,10 +15,8 @@ function CarroselPage() {
   };
 
   return (
-    <div>
 
-
-    <Carousel className='mt-3' width-100 activeIndex={index} onSelect={handleSelect}>
+    <Carousel className='mt-0 w-100' activeIndex={index} onSelect={handleSelect}>
 
       <Carousel.Item>
         <img className="d-block w-100" src={Img1}alt="First slide"/>
@@ -30,7 +28,7 @@ function CarroselPage() {
         <img className="d-block w-100" src={Img3} alt="Third slide"/>
       </Carousel.Item>
       </Carousel>
-     </div>
+  
   );
 }
 

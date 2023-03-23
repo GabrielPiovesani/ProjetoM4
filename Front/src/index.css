@@ -9,7 +9,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-  
 
 }
 body{
@@ -50,12 +49,25 @@ button .btn btn-info{
   text-align: center;
 }
 
-/* == Configuraçoes pagina home == */
-.mb-3:hover{
-  border: 1px solid #102453;
-  background-color: #0c1c3d;
-  border-radius: 10px;
+
+/* Carrossel */
+.mt-10{
+    width: 100vw !important;
+  }
+
+
+  /* Page tabela de preço */
+.card:hover{
+  border: 2px solid #7487b3;
+  background-color: #092c71;
+  color: white;
+  box-shadow: rgba(133, 127, 158, 0.477) 0px 5px 15px;
 }
+
+
+
+
+
 
 
 

@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -17,7 +18,11 @@ public class MusicaController {
     @Autowired
     private MusicaRepository musicaRepository;
 
-
+    @GetMapping
+    public ResponseEntity<List<Musica>> listarMusica() {
+        List<Musica> music = musicaRepository.findAll();
+        return ResponseEntity.ok(music);
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<Musica> getMusicaById(@PathVariable Long id) {

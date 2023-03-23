@@ -8,7 +8,7 @@ function BotaoEntrada() {
       <Navbar.Brand>
         <img
           src={logo}
-          width="130"
+          width="100"
           height="40"
           className="d-inline-block align-top"
           alt="Logo"
