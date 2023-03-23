@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 
 
+
 function Formulario() {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
@@ -70,7 +71,9 @@ function Formulario() {
         </Button>
       </Form>
     </div>
+    
   );
+  
 }
 
 export default Formulario;
