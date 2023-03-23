@@ -12,13 +12,6 @@ function Formulario() {
   const [feedbackMsg, setFeedbackMsg] = useState("");
 
 
-  const [nomeErr, setNomeErr] = useState(false);
-  const [emailErr, setEmailErr] = useState(false);
-  const [senhaErr, setSenhaErr] = useState(false);
-  const [confirmSenhaErr, setConfirmSenhaErr] = useState(false);
-  const [showFeedbackErr, setShowFeedbackErr] = useState(true);
-  const [feedbackMsgErr, setFeedbackMsgErr] = useState("");
-
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,12 +22,6 @@ function Formulario() {
       setFeedbackMsg("As senhas não coincidem.");
       return;
     }
-    
-    
-    console.log(`NomeErr:${""}, EmailErr:${""}, SenhaErr:${""}, ConfirmSenhaErr:{""}, ShowFeedbackErr:${""},FeedbackMsgErr:${""}`); 
-      setShowFeedbackErr(false);
-      setFeedbackMsgErr("Cadastro !");
-
     
 
     // Faz o cadastro do usuário

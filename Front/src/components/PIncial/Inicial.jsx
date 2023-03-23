@@ -11,7 +11,6 @@ const Inicial = () => {
 
 
       <Container className=" m-0">
-
       </Container>
         
        
