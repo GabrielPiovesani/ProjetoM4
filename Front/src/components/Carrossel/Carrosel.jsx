@@ -15,8 +15,8 @@ function CarroselPage() {
   };
 
   return (
-    <div className='carousel'>
-    <Carousel className='mt-0' activeIndex={index} onSelect={handleSelect}>
+
+    <Carousel className='mt-0 w-100' activeIndex={index} onSelect={handleSelect}>
 
       <Carousel.Item>
         <img className="d-block w-100" src={Img1}alt="First slide"/>
@@ -28,7 +28,7 @@ function CarroselPage() {
         <img className="d-block w-100" src={Img3} alt="Third slide"/>
       </Carousel.Item>
       </Carousel>
-     </div>
+  
   );
 }
 
