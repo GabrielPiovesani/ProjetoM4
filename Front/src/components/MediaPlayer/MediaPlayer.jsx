@@ -10,6 +10,8 @@ function MediaPlayer() {
   const [currentMedia, setCurrentMedia] = useState([]);
   const [isPlaying, setIsPlaying] = useState(false);
   const [showPlaylistModal, setShowPlaylistModal] = useState(false);
+  const [currentArtista, setArtista] = useState("");
+
 
   useEffect(() => {
     fetch(`${apiUrl}/playlists`)
@@ -18,23 +20,29 @@ function MediaPlayer() {
   }, []);
 
 
+
+
   function handlePlayClick() {
-    setIsPlaying(true);
+    setIsPlaying(!isPlaying);
   }
 
   function handlePlaylistSelect(event) {
     setCurrentPlaylist(playlists[event.target.value]);
     setCurrentMedia(playlists[event.target.value].musicas[0]);
     setCurrentMediaIndex(0);
+    setArtista(playlists[event.target.value].musicas[0].musico.nome)
   }
+  console.log(currentArtista);
 
   function handleNextClick() {
     if (currentMediaIndex > currentPlaylist.musicas.length - 1) {
       setCurrentMedia(currentPlaylist.musicas[0]);
       setCurrentMediaIndex(0);
+      setArtista(currentMedia.musico.nome)
     } else {
       setCurrentMediaIndex(currentMediaIndex + 1);
       setCurrentMedia(currentPlaylist.musicas[currentMediaIndex]);
+      setArtista(currentMedia.musico.nome)
     }
   }
 
@@ -43,9 +51,11 @@ function MediaPlayer() {
     if (currentMediaIndex > -1) {
       setCurrentMedia(currentPlaylist.musicas[currentMediaIndex]);
       setCurrentMediaIndex(currentMediaIndex -1);
+      setArtista(currentMedia.musico.nome)
     } else {
       setCurrentMediaIndex(currentPlaylist.musicas.length - 1);
       setCurrentMedia(currentPlaylist.musicas[currentPlaylist.musicas.length - 1]);
+      setArtista(currentMedia.musico.nome)
     }
   }
 
@@ -61,12 +71,15 @@ function MediaPlayer() {
     setShowPlaylistModal(false);
   }
 
+  
   return (
     <div className="player-container">
      
     <h4>Playlist: {currentPlaylist?.nome} </h4>
       <h4>Mídia: {currentMedia?.titulo} </h4>
       <h4>Gênero: {currentMedia?.genero} </h4>
+      <h4>Duração: {currentMedia?.duracao} </h4>
+      <h4>Artista: {currentArtista} </h4>
      
       <div className="progress-container">
         <ProgressBar now={60} label={`${60}%`} />
@@ -91,7 +104,7 @@ function MediaPlayer() {
           <Modal.Title>Lista de reprodução</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form.Control as="select" onChange={handlePlaylistSelect}>
+          <Form.Control as="select" onClick={handlePlaylistSelect}>
             {playlists.map((playlist, index) => (
               <option key={index} value={index}>
                 {playlist.nome}
