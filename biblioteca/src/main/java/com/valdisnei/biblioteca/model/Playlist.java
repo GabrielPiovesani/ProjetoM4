@@ -16,8 +16,6 @@ public class Playlist {
     private Long id;
     @OneToMany
     private List<Musica> musicas;
-//    @OneToMany
-//    private List<Filme> filmes;
     private int ordem;
     private int midiaAtual;
     private String nome;
