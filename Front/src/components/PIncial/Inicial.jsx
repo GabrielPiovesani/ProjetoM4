@@ -9,10 +9,10 @@ import IMG2 from '../../assets/img/inicio.jpg';
 const Inicial = () => {
     return (
 
-      <Container className="d-flex shadow rounded m-0">
+      <Container className=" m-0">
       {/* <h1>Assista e ouça as suas mídias em um único lugar</h1> */}
       </Container>
-         
+        
        
         
         

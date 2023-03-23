@@ -9,7 +9,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-  
 
 }
 body{
@@ -50,12 +49,6 @@ button .btn btn-info{
   text-align: center;
 }
 
-/* == Configuraçoes pagina home == */
-/* .mb-3:hover{
-  border: 1px solid #132857;
-  background-color: #0c1c3d;
-  border-radius: 10px;
-} */
 
 /* Carrossel */
 .mt-10{
@@ -70,6 +63,8 @@ button .btn btn-info{
   color: white;
   box-shadow: rgba(133, 127, 158, 0.477) 0px 5px 15px;
 }
+
+
 
 
 

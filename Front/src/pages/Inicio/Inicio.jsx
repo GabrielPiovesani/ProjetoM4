@@ -9,6 +9,7 @@ import Dispositivo from '../../components/Dispositivo/Dispositivo';
 
 
 
+
 export default function Home() {
     return (
         <>
