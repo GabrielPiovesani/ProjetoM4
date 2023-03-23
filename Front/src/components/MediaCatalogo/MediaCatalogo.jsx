@@ -17,14 +17,14 @@ export default function MediaCatalogo() {
       title: "Breaking Bad",
       image: Breakin,
       description:
-        "A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine in order to secure his family's future.",
+        "Ao saber que tem câncer, um professor passa a fabricar metanfetamina pelo futuro da família, mudando o destino de todos.",
     },
     {
       id: 2,
       title: "Stranger Things",
       image: StrangerThings,
       description:
-        "When a young boy disappears, his mother, a police chief, and his friends must confront terrifying supernatural forces in order to get him back.",
+        "Quando um garoto desaparece, a cidade toda participa nas buscas. Mas o que encontram são segredos, forças sobrenaturais e uma menina.",
     },
     {
       id: 3,
@@ -76,7 +76,7 @@ export default function MediaCatalogo() {
   
 
   return (
-    <Container className="mt-5">
+    <Container className="mt-5 ">
       <Row>
         <Col>
           <Tabs defaultActiveKey="series" id="media-tabs">
@@ -84,11 +84,11 @@ export default function MediaCatalogo() {
               <Row>
                 {series.map((media) => (
                   <Col md={4} key={media.id}>
-                    <Card className="m-3">
+                    <Card className="m-3" >
                       <Card.Img variant="top" src={media.image} />
                       <Card.Body>
                         <Card.Title>{media.title}</Card.Title>
-                        <Card.Text>{media.description}</Card.Text>
+                        <Card.Text className="text-dark">{media.description}</Card.Text>
                         <Button variant="primary">Assistir</Button>
                       </Card.Body>
                     </Card>
@@ -104,7 +104,7 @@ export default function MediaCatalogo() {
                       <Card.Img variant="top" src={media.image} />
                       <Card.Body>
                         <Card.Title>{media.title}</Card.Title>
-                        <Card.Text>{media.description}</Card.Text>
+                        <Card.Text className="text-dark">{media.description}</Card.Text>
                         <Button variant="primary">Assistir</Button>
                       </Card.Body>
                     </Card>
@@ -120,7 +120,7 @@ export default function MediaCatalogo() {
                       <Card.Img variant="top" src={media.image} />
                       <Card.Body>
                         <Card.Title>{media.title}</Card.Title>
-                        <Card.Text>{media.artist}</Card.Text>
+                        <Card.Text className="text-dark">{media.artist}</Card.Text>
                         <Button variant="primary">Ouvir</Button>
                       </Card.Body>
                     </Card>
