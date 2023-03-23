@@ -1,7 +1,7 @@
 import "./mplayer.css";
 import React, { useState, useEffect } from "react";
 import { Button, ProgressBar, Form, Modal } from "react-bootstrap";
-
+import { proxy as apiUrl } from '../../../package.json';
 
 function MediaPlayer() {
   const [playlists, setPlaylists] = useState([]);
@@ -12,13 +12,13 @@ function MediaPlayer() {
   const [showPlaylistModal, setShowPlaylistModal] = useState(false);
 
   useEffect(() => {
-    fetch("url-da-api/playlists")
+    fetch(`${apiUrl}/playlists`)
       .then((response) => response.json())
       .then((data) => setPlaylists(data));
   }, []);
 
   useEffect(() => {
-    fetch(`url-da-api/playlists/${currentPlaylistIndex}/media`)
+    fetch(`http://localhost:8090/playlists/${currentPlaylistIndex+1}`)
       .then((response) => response.json())
       .then((data) => setMediaList(data));
   }, [currentPlaylistIndex]);
@@ -63,8 +63,10 @@ function MediaPlayer() {
 
   return (
     <div class="player-container">
-      <h2>{mediaList[currentMediaIndex]?.name}</h2>
-      <h4>Playlist: {playlists[currentPlaylistIndex]?.name}</h4>
+     <h2>{mediaList[currentMediaIndex]?.nome}</h2>
+    <h4>Playlist: {playlists[currentPlaylistIndex]?.nome}</h4>
+      <h4>Mídia: {mediaList[currentMediaIndex]?.playlists[0].titulo}</h4>
+     
       <div className="progress-container">
         <ProgressBar now={60} label={`${60}%`} />
       </div>
@@ -91,8 +93,9 @@ function MediaPlayer() {
           <Form.Control as="select" onChange={handlePlaylistSelect}>
             {playlists.map((playlist, index) => (
               <option key={index} value={index}>
-                {playlist.name}
+                {playlist.nome}
               </option>
+            
             ))}
           </Form.Control>
         </Modal.Body>

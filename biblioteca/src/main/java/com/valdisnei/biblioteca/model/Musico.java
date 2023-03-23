@@ -19,9 +19,8 @@ public class Musico extends Artista {
     private String atuacao;
 
     @Builder(builderMethodName = "musicoBuild")
-    public Musico(Long id, String nome, String dataNascimento, String premiacoes, String genero, Long id1, String atuacao) {
-        super(id, nome, dataNascimento, premiacoes, genero);
-        this.id = id1;
+    public Musico(String nome, String dataNascimento, String premiacoes, String genero, String atuacao) {
+        super(nome, dataNascimento, premiacoes, genero);
         this.atuacao = atuacao;
     }
 }

@@ -6,8 +6,6 @@ import lombok.*;
 @MappedSuperclass
 @Getter
 @Setter
-@Builder
-@AllArgsConstructor
 @NoArgsConstructor
 public class Artista {
 
@@ -18,4 +16,12 @@ public class Artista {
     private String dataNascimento;
     private String premiacoes;
     private String genero;
+
+    @Builder(builderMethodName = "artistaBuild")
+    public Artista(String nome, String dataNascimento, String premiacoes, String genero) {
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.premiacoes = premiacoes;
+        this.genero = genero;
+    }
 }

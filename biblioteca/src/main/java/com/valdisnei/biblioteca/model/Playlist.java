@@ -1,10 +1,7 @@
 package com.valdisnei.biblioteca.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -25,4 +22,12 @@ public class Playlist {
     private int ordem;
     private int midiaAtual;
     private String nome;
+
+    @Builder(builderMethodName = "PlaylistBuild")
+    public Playlist(List<Musica> musicas, String nome) {
+        this.musicas = musicas;
+        this.nome = nome;
+    }
+
+
 }
