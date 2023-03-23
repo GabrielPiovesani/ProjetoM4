@@ -11,6 +11,15 @@ function Formulario() {
   const [showFeedback, setShowFeedback] = useState(false);
   const [feedbackMsg, setFeedbackMsg] = useState("");
 
+
+  const [nomeErr, setNomeErr] = useState(false);
+  const [emailErr, setEmailErr] = useState(false);
+  const [senhaErr, setSenhaErr] = useState(false);
+  const [confirmSenhaErr, setConfirmSenhaErr] = useState(false);
+  const [showFeedbackErr, setShowFeedbackErr] = useState(true);
+  const [feedbackMsgErr, setFeedbackMsgErr] = useState("");
+
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -20,6 +29,13 @@ function Formulario() {
       setFeedbackMsg("As senhas não coincidem.");
       return;
     }
+    
+    
+    console.log(`NomeErr:${""}, EmailErr:${""}, SenhaErr:${""}, ConfirmSenhaErr:{""}, ShowFeedbackErr:${""},FeedbackMsgErr:${""}`); 
+      setShowFeedbackErr(false);
+      setFeedbackMsgErr("Cadastro !");
+
+    
 
     // Faz o cadastro do usuário
     console.log(`Nome: ${nome}, Email: ${email}, Senha: ${senha}, Confirmação de senha: ${confirmSenha}`);
@@ -29,8 +45,11 @@ function Formulario() {
     setFeedbackMsg("Cadastro realizado com sucesso!");
   };
 
+
+
+
   return (
-    <div className="d-flex justify-content-center mt-0" >
+    <div className="d-flex justify-content-center" >
       <Form className="formCadastro" onSubmit={handleSubmit}>
         <h4>Criar Conta</h4>
         <div className="textcadastro">
