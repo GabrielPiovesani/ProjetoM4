@@ -51,30 +51,5 @@ public class BibliotecaApplication {
 		};
 	}
 
-//	{
-//		"nome":"L7NNON",
-//		"dataNascimento": "30/03/1994",
-//		"premiacoes": "Melhor artista do ano",
-//		"genero": "Masc"
-//	}
-//	{
-//		"nome":"Ananda",
-//		"dataNascimento": "30/03/1994",
-//		"premiacoes": "Melhor artista do ano",
-//		"genero": "Fem"
-//	}
-//
-//	{
-//		"titulo":"Rubi",
-//		"ano": 2021,
-//		"genero": "rap"
-//		"duracao": 2.37,
-//		"nota": "7",
-//		"Artista": [{
-//		"nome":"Ananda",
-//		"dataNascimento": "30/03/1994",
-//		"premiacoes": "Melhor artista do ano",
-//		"genero": "Fem"
-//		}]
-//	}
+
 }

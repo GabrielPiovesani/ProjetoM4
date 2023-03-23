@@ -4,10 +4,10 @@ import { Button, ProgressBar, Form, Modal } from "react-bootstrap";
 import { proxy as apiUrl } from '../../../package.json';
 
 function MediaPlayer() {
-  const [playlists, setPlaylists] = useState([]);
-  const [currentPlaylistIndex, setCurrentPlaylistIndex] = useState(0);
-  const [mediaList, setMediaList] = useState([]);
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
+  const [playlists, setPlaylists] = useState([]);
+  const [currentPlaylist, setCurrentPlaylist]= useState([])
+  const [currentMedia, setCurrentMedia] = useState([]);
   const [isPlaying, setIsPlaying] = useState(false);
   const [showPlaylistModal, setShowPlaylistModal] = useState(false);
 
@@ -17,40 +17,40 @@ function MediaPlayer() {
       .then((data) => setPlaylists(data));
   }, []);
 
-  useEffect(() => {
-    fetch(`http://localhost:8090/playlists/${currentPlaylistIndex+1}`)
-      .then((response) => response.json())
-      .then((data) => setMediaList(data));
-  }, [currentPlaylistIndex]);
 
   function handlePlayClick() {
     setIsPlaying(true);
   }
 
   function handlePlaylistSelect(event) {
-    setCurrentPlaylistIndex(event.target.value);
+    setCurrentPlaylist(playlists[event.target.value]);
+    setCurrentMedia(playlists[event.target.value].musicas[0]);
     setCurrentMediaIndex(0);
   }
 
   function handleNextClick() {
-    if (currentMediaIndex === mediaList.length - 1) {
+    if (currentMediaIndex > currentPlaylist.musicas.length - 1) {
+      setCurrentMedia(currentPlaylist.musicas[0]);
       setCurrentMediaIndex(0);
     } else {
       setCurrentMediaIndex(currentMediaIndex + 1);
+      setCurrentMedia(currentPlaylist.musicas[currentMediaIndex]);
     }
   }
 
   function handlePrevClick() {
-    if (currentMediaIndex === 0) {
-      setCurrentMediaIndex(mediaList.length - 1);
+    console.log(currentMediaIndex);
+    if (currentMediaIndex > -1) {
+      setCurrentMedia(currentPlaylist.musicas[currentMediaIndex]);
+      setCurrentMediaIndex(currentMediaIndex -1);
     } else {
-      setCurrentMediaIndex(currentMediaIndex - 1);
+      setCurrentMediaIndex(currentPlaylist.musicas.length - 1);
+      setCurrentMedia(currentPlaylist.musicas[currentPlaylist.musicas.length - 1]);
     }
   }
 
   function handleStopClick() {
     setIsPlaying(false);
-    setCurrentMediaIndex(0);
   }
 
   function handlePlaylistModalOpen() {
@@ -62,10 +62,11 @@ function MediaPlayer() {
   }
 
   return (
-    <div class="player-container">
-     <h2>{mediaList[currentMediaIndex]?.nome}</h2>
-    <h4>Playlist: {playlists[currentPlaylistIndex]?.nome}</h4>
-      <h4>Mídia: {mediaList[currentMediaIndex]?.playlists[0].titulo}</h4>
+    <div className="player-container">
+     
+    <h4>Playlist: {currentPlaylist?.nome} </h4>
+      <h4>Mídia: {currentMedia?.titulo} </h4>
+      <h4>Gênero: {currentMedia?.genero} </h4>
      
       <div className="progress-container">
         <ProgressBar now={60} label={`${60}%`} />
@@ -95,7 +96,6 @@ function MediaPlayer() {
               <option key={index} value={index}>
                 {playlist.nome}
               </option>
-            
             ))}
           </Form.Control>
         </Modal.Body>
