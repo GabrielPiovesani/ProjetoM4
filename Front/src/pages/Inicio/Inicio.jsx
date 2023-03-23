@@ -23,12 +23,6 @@ export default function Home() {
             <Tabela />
             <Footer/>
             
-           
-            
-
-             
-
-            
         </>
     )
 

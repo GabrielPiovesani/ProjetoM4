@@ -9,6 +9,7 @@ import IMG2 from '../../assets/img/inicio.jpg';
 const Inicial = () => {
     return (
 
+
       <Container className=" m-0">
       </Container>
         
