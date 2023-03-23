@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 @CrossOrigin
 @RestController
@@ -16,6 +17,11 @@ public class FilmeController {
     @Autowired
     private FilmeRepository filmeRepository;
 
+    @GetMapping
+    public ResponseEntity<List<Filme>> getAll() {
+        List<Filme> filmes = filmeRepository.findAll();
+        return ResponseEntity.ok(filmes);
+    }
     @GetMapping("/{id}")
     public ResponseEntity<Filme> getFilmeById(@PathVariable Long id) {
         Optional<Filme> filme = filmeRepository.findById(id);
