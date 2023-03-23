@@ -6,7 +6,7 @@ import Footer from '../../components/Footer/Footer.jsx'
 import LoginMenu from '../../components/LoginMenu/LoginMenu.jsx';
 
 export default function Cadastro(){
-  return(<>
+  return(<div>
     <Header></Header>
     <Formulario></Formulario>
     <Footer/>
