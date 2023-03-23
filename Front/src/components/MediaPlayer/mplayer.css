@@ -21,4 +21,16 @@
   margin-bottom: 10px;
 }
 
+.modal-content {
+  background-color: #000000;
+  color: #050505;
+}
+
+.modal-header {
+  border-bottom: 1px solid #080808;
+}
+
+.modal-title {
+  color: #161616;
+}
 
