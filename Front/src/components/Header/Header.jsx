@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <div>
-      <Navbar style={{ backgroundColor: '#000000', boxShadow: '5 5px 10px rgba(0,0,0,0.5)' }} expand="1g">
+      <Navbar className='d-flex r w-100' style={{ backgroundColor: '#000000', boxShadow: '5 5px 10px rgba(0,0,0,0.5)' }} expand="lg" >
 
         <Navbar.Brand>
           <img
@@ -25,11 +25,11 @@ export default function Header() {
             alt="Logo"
           />
         </Navbar.Brand>
-        {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> 
-         <Nav className="w-100 justify-content-center" >
-          <Nav.Link  style={{ color: 'white', fontSize: '20px' }} href="/biblioteca">Biblioteca</Nav.Link>
-          <Nav.Link  style={{ color: 'white', fontSize: '20px' }} href="/playlist">Minhas Playlists</Nav.Link>
-        </Nav>  */}
+        <Navbar.Toggle aria-controls="basic-navbar-nav" /> 
+         <Nav className="justify-content-center mx-auto" >
+          <Nav.Link  style={{ color: 'white', fontSize: '20px' }} href="/home">Biblioteca</Nav.Link>
+          <Nav.Link  style={{ color: 'white', fontSize: '20px' }} href="/mediaplayer">Minhas Playlists</Nav.Link>
+        </Nav> 
         <Navbar.Collapse id="basic-navbar-nav">
           {username && <p>{username}</p>}
         </Navbar.Collapse>
