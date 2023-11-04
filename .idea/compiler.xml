@@ -13,7 +13,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="appdisnei" target="19" />
-      <module name="biblioteca" target="19" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

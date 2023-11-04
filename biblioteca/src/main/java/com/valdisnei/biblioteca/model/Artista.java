@@ -3,10 +3,11 @@ package com.valdisnei.biblioteca.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-@MappedSuperclass
+
 @Getter
 @Setter
 @NoArgsConstructor
+@Data
 public class Artista {
 
     @Id
